@@ -973,27 +973,27 @@ li { margin-bottom: 5px; }
 
 <h3 data-i18n="task_21">Task 2.1 — Topology Selection &amp; Justification</h3>
 <div class="card">
-  <p>Select and justify with quantitative reasoning:</p>
+  <p data-i18n="task21_desc">Select and justify with quantitative reasoning:</p>
   <ul>
-    <li>Motor topology: outrunner SPM, outrunner IPM, inrunner, or axial flux</li>
-    <li>Slot/pole combination (with winding factor calculation)</li>
-    <li>Winding configuration: concentrated vs distributed, star vs delta</li>
-    <li>Target KV value (derive from thrust/propeller/voltage requirements)</li>
+    <li data-i18n="task21_l1">Motor topology: outrunner SPM, outrunner IPM, inrunner, or axial flux</li>
+    <li data-i18n="task21_l2">Slot/pole combination (with winding factor calculation)</li>
+    <li data-i18n="task21_l3">Winding configuration: concentrated vs distributed, star vs delta</li>
+    <li data-i18n="task21_l4">Target KV value (derive from thrust/propeller/voltage requirements)</li>
   </ul>
-  <p style="margin-top: 10px;"><strong>Deliverable:</strong> 1-2 page justification with comparison table of &ge;2 candidate configurations.</p>
+  <p style="margin-top: 10px;" data-i18n="task21_deliv"><strong>Deliverable:</strong> 1-2 page justification with comparison table of &ge;2 candidate configurations.</p>
 </div>
 
 <h3 data-i18n="task_22">Task 2.2 — Electromagnetic Design</h3>
 <div class="card">
-  <p>For the selected configuration, calculate or determine through FEA:</p>
+  <p data-i18n="task22_desc">For the selected configuration, calculate or determine through FEA:</p>
   <ul>
-    <li><strong>Magnetic circuit:</strong> B_gap, B_tooth, B_yoke flux densities</li>
-    <li><strong>Winding:</strong> Turns/coil, wire gauge, parallel strands, fill factor, R_phase, L_d, L_q</li>
-    <li><strong>Performance:</strong> Back-EMF waveform (shape + amplitude vs RPM), torque-current curve, cogging torque</li>
-    <li><strong>Losses:</strong> Copper losses (hover + max thrust), iron losses (hysteresis + eddy), magnet eddy losses</li>
-    <li><strong>Efficiency:</strong> At 25%, 50%, 75%, 100% throttle</li>
+    <li data-i18n="task22_l1"><strong>Magnetic circuit:</strong> B_gap, B_tooth, B_yoke flux densities</li>
+    <li data-i18n="task22_l2"><strong>Winding:</strong> Turns/coil, wire gauge, parallel strands, fill factor, R_phase, L_d, L_q</li>
+    <li data-i18n="task22_l3"><strong>Performance:</strong> Back-EMF waveform (shape + amplitude vs RPM), torque-current curve, cogging torque</li>
+    <li data-i18n="task22_l4"><strong>Losses:</strong> Copper losses (hover + max thrust), iron losses (hysteresis + eddy), magnet eddy losses</li>
+    <li data-i18n="task22_l5"><strong>Efficiency:</strong> At 25%, 50%, 75%, 100% throttle</li>
   </ul>
-  <p style="margin-top: 10px;"><strong>Deliverable:</strong> FEA screenshots (flux density, back-EMF, cogging plots), calculation files, parameter summary table.</p>
+  <p style="margin-top: 10px;" data-i18n="task22_deliv"><strong>Deliverable:</strong> FEA screenshots (flux density, back-EMF, cogging plots), calculation files, parameter summary table.</p>
 </div>
 
 <h3 data-i18n="task_23">Task 2.3 — Material Selection</h3>
@@ -1007,41 +1007,41 @@ li { margin-bottom: 5px; }
     <tr><td>Rotor bell</td><td>Material, wall thickness, surface treatment</td></tr>
   </table>
   </div>
-  <p>Include a <strong>demagnetization check</strong> at maximum current and maximum operating temperature.</p>
+  <p data-i18n="task23_demag">Include a <strong>demagnetization check</strong> at maximum current and maximum operating temperature.</p>
 </div>
 
 <h3 data-i18n="task_24">Task 2.4 — Thermal Assessment</h3>
 <div class="card">
-  <p>Provide a thermal estimate for continuous hover operation:</p>
+  <p data-i18n="task24_desc">Provide a thermal estimate for continuous hover operation:</p>
   <ul>
-    <li>Identify all heat sources and magnitudes</li>
-    <li>Estimate winding hot-spot temperature (LPTN or equivalent)</li>
-    <li>Confirm magnet temperature within safe limits</li>
-    <li>Suggest cooling strategy (passive/active, ventilation, potting)</li>
+    <li data-i18n="task24_l1">Identify all heat sources and magnitudes</li>
+    <li data-i18n="task24_l2">Estimate winding hot-spot temperature (LPTN or equivalent)</li>
+    <li data-i18n="task24_l3">Confirm magnet temperature within safe limits</li>
+    <li data-i18n="task24_l4">Suggest cooling strategy (passive/active, ventilation, potting)</li>
   </ul>
-  <p style="margin-top: 10px;"><strong>Deliverable:</strong> Thermal circuit diagram, temperature estimates, cooling recommendations.</p>
+  <p style="margin-top: 10px;" data-i18n="task24_deliv"><strong>Deliverable:</strong> Thermal circuit diagram, temperature estimates, cooling recommendations.</p>
 </div>
 
 <h2 data-i18n="sec_challenge"><span class="num">3</span> Challenge Task</h2>
 
 <div class="star-block">
-  <h3>&#9733; Multi-Objective Optimization (Bonus)</h3>
-  <p style="color: var(--text-secondary); margin-top: 10px;">
+  <h3 data-i18n="challenge_title">&#9733; Multi-Objective Optimization (Bonus)</h3>
+  <p style="color: var(--text-secondary); margin-top: 10px;" data-i18n="challenge_desc">
     Define and execute a multi-objective optimization:
   </p>
   <ol style="margin-top: 10px;">
-    <li><strong>Maximize</strong> efficiency at hover (50% throttle)</li>
-    <li><strong>Minimize</strong> cogging torque (% of rated)</li>
-    <li><strong>Minimize</strong> motor weight (active materials)</li>
+    <li data-i18n="challenge_obj1"><strong>Maximize</strong> efficiency at hover (50% throttle)</li>
+    <li data-i18n="challenge_obj2"><strong>Minimize</strong> cogging torque (% of rated)</li>
+    <li data-i18n="challenge_obj3"><strong>Minimize</strong> motor weight (active materials)</li>
   </ol>
-  <p style="color: var(--text-secondary); margin-top: 12px;"><strong>Design variables</strong> (minimum 4):</p>
+  <p style="color: var(--text-secondary); margin-top: 12px;" data-i18n="challenge_vars"><strong>Design variables</strong> (minimum 4):</p>
   <ul>
-    <li>Tooth width, slot opening, magnet thickness, magnet arc ratio, turns/wire gauge</li>
+    <li data-i18n="challenge_vars_list">Tooth width, slot opening, magnet thickness, magnet arc ratio, turns/wire gauge</li>
   </ul>
-  <p style="color: var(--text-secondary); margin-top: 14px;">
+  <p style="color: var(--text-secondary); margin-top: 14px;" data-i18n="challenge_output">
     <strong>Output:</strong> Pareto front, sensitivity analysis, recommended design point with justification.
   </p>
-  <p style="color: var(--text-muted); margin-top: 10px; font-size: 12px;">
+  <p style="color: var(--text-muted); margin-top: 10px; font-size: 12px;" data-i18n="challenge_tools">
     Tools: Python + PyFEMM, MATLAB + FEA, MotorCAD optimizer, JMAG, or manual DOE.
   </p>
 </div>
@@ -1050,21 +1050,21 @@ li { margin-bottom: 5px; }
 
 <div class="card">
   <ul class="checklist">
-    <li>PDF report (10-20 pages, structured per tasks 2.1-2.4 + bonus)</li>
-    <li>Complete parameter summary table (single page)</li>
-    <li>FEA model files (.fem / .lua / project files)</li>
-    <li>Calculation scripts or spreadsheets</li>
-    <li>Back-EMF, cogging torque, and flux density plots</li>
-    <li>Efficiency data (hover + max thrust at minimum)</li>
-    <li>Active component BOM with estimated costs</li>
+    <li data-i18n="sub_1">PDF report (10-20 pages, structured per tasks 2.1-2.4 + bonus)</li>
+    <li data-i18n="sub_2">Complete parameter summary table (single page)</li>
+    <li data-i18n="sub_3">FEA model files (.fem / .lua / project files)</li>
+    <li data-i18n="sub_4">Calculation scripts or spreadsheets</li>
+    <li data-i18n="sub_5">Back-EMF, cogging torque, and flux density plots</li>
+    <li data-i18n="sub_6">Efficiency data (hover + max thrust at minimum)</li>
+    <li data-i18n="sub_7">Active component BOM with estimated costs</li>
   </ul>
 </div>
 
 <h2 data-i18n="sec_reference"><span class="num">5</span> Reference Data</h2>
 
 <div class="card">
-  <div class="card-header">Propeller Performance (for motor sizing)</div>
-  <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Use these estimates for torque/RPM sizing. Actual data may vary.</p>
+  <div class="card-header" data-i18n="ref_prop_title">Propeller Performance (for motor sizing)</div>
+  <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;" data-i18n="ref_prop_note">Use these estimates for torque/RPM sizing. Actual data may vary.</p>
   <div class="table-wrap">
   <table>
     <tr><th>Propeller</th><th>Thrust (kg)</th><th>RPM</th><th>Torque (Nm)</th><th>Power (W)</th></tr>
@@ -1077,7 +1077,7 @@ li { margin-bottom: 5px; }
 </div>
 
 <div class="card">
-  <div class="card-header">Useful Relationships</div>
+  <div class="card-header" data-i18n="ref_formulas_title">Useful Relationships</div>
   <div class="formula">Kt = 60 / (2&pi; &middot; KV)              [Nm/A, where KV in RPM/V]
 B_gap = Br &middot; Lm / (Lm + &mu;r &middot; g)    [T, magnetic circuit approximation]
 &Phi; = B_gap &middot; &alpha;p &middot; (&pi;D / 2p) &middot; L   [Wb, flux per pole]
@@ -1113,50 +1113,50 @@ L10h = (C/P)^3 &middot; 10&sup6; / (60&middot;n)       [hours, bearing life]</di
   Do not share with candidates
 </p>
 
-<h2><span class="num">A</span> Interview Scoring (100 pts)</h2>
+<h2 data-i18n="score_sec_a"><span class="num">A</span> Interview Scoring (100 pts)</h2>
 
 <div class="table-wrap">
 <table>
-  <tr><th>Category</th><th>Questions</th><th>Max Points</th><th>Min for Senior</th></tr>
-  <tr><td>EM Fundamentals</td><td>1-5</td><td>25</td><td>20</td></tr>
-  <tr><td>Materials &amp; Components</td><td>6-10</td><td>25</td><td>18</td></tr>
-  <tr><td>Design Methodology</td><td>11-15</td><td>20</td><td>14</td></tr>
-  <tr><td>Thermal &amp; Mechanical</td><td>16-20</td><td>15</td><td>10</td></tr>
-  <tr><td>Practical Experience</td><td>21-25</td><td>15</td><td>10</td></tr>
-  <tr><td><strong>Total</strong></td><td></td><td><strong>100</strong></td><td><strong>72</strong></td></tr>
+  <tr><th data-i18n="th_category">Category</th><th data-i18n="th_questions">Questions</th><th data-i18n="th_max_pts">Max Points</th><th data-i18n="th_min_senior">Min for Senior</th></tr>
+  <tr><td data-i18n="sc_em_fund">EM Fundamentals</td><td>1-5</td><td>25</td><td>20</td></tr>
+  <tr><td data-i18n="sc_materials">Materials &amp; Components</td><td>6-10</td><td>25</td><td>18</td></tr>
+  <tr><td data-i18n="sc_methodology">Design Methodology</td><td>11-15</td><td>20</td><td>14</td></tr>
+  <tr><td data-i18n="sc_thermal">Thermal &amp; Mechanical</td><td>16-20</td><td>15</td><td>10</td></tr>
+  <tr><td data-i18n="sc_practical">Practical Experience</td><td>21-25</td><td>15</td><td>10</td></tr>
+  <tr><td><strong data-i18n="sc_total">Total</strong></td><td></td><td><strong>100</strong></td><td><strong>72</strong></td></tr>
 </table>
 </div>
 
-<h2><span class="num">B</span> Assignment Scoring (100 pts)</h2>
+<h2 data-i18n="score_sec_b"><span class="num">B</span> Assignment Scoring (100 pts)</h2>
 
 <div class="table-wrap">
 <table>
-  <tr><th>Task</th><th>Criteria</th><th>Points</th></tr>
-  <tr><td>2.1 Topology</td><td>Correct topology, slot/pole justification, KV derivation</td><td>15</td></tr>
-  <tr><td>2.2 EM Design</td><td>Magnetic circuit accuracy, winding, FEA quality, efficiency</td><td>35</td></tr>
-  <tr><td>2.3 Materials</td><td>Appropriate selections with datasheets, demagnetization check</td><td>15</td></tr>
-  <tr><td>2.4 Thermal</td><td>Reasonable model, correct heat sources, viable cooling</td><td>15</td></tr>
-  <tr><td>Report Quality</td><td>Structure, clarity, documented assumptions</td><td>10</td></tr>
-  <tr><td>Scripts</td><td>Parameterized model, repeatable analysis</td><td>10</td></tr>
-  <tr><td><strong>Total</strong></td><td></td><td><strong>100</strong></td></tr>
+  <tr><th data-i18n="th_task">Task</th><th data-i18n="th_criteria">Criteria</th><th data-i18n="th_points">Points</th></tr>
+  <tr><td>2.1 Topology</td><td data-i18n="sc_b_21">Correct topology, slot/pole justification, KV derivation</td><td>15</td></tr>
+  <tr><td>2.2 EM Design</td><td data-i18n="sc_b_22">Magnetic circuit accuracy, winding, FEA quality, efficiency</td><td>35</td></tr>
+  <tr><td>2.3 Materials</td><td data-i18n="sc_b_23">Appropriate selections with datasheets, demagnetization check</td><td>15</td></tr>
+  <tr><td>2.4 Thermal</td><td data-i18n="sc_b_24">Reasonable model, correct heat sources, viable cooling</td><td>15</td></tr>
+  <tr><td data-i18n="sc_report">Report Quality</td><td data-i18n="sc_b_report">Structure, clarity, documented assumptions</td><td>10</td></tr>
+  <tr><td data-i18n="sc_scripts">Scripts</td><td data-i18n="sc_b_scripts">Parameterized model, repeatable analysis</td><td>10</td></tr>
+  <tr><td><strong data-i18n="sc_total2">Total</strong></td><td></td><td><strong>100</strong></td></tr>
 </table>
 </div>
 
-<h3>Bonus: Challenge Task (+25 pts)</h3>
+<h3 data-i18n="score_bonus">Bonus: Challenge Task (+25 pts)</h3>
 <div class="table-wrap">
 <table>
-  <tr><th>Criteria</th><th>Points</th></tr>
-  <tr><td>Proper optimization setup (variables, objectives, constraints)</td><td>8</td></tr>
-  <tr><td>Pareto front (meaningful trade-off visualization)</td><td>7</td></tr>
-  <tr><td>Sensitivity analysis (identifies dominant variables)</td><td>5</td></tr>
-  <tr><td>Justified optimal point</td><td>5</td></tr>
+  <tr><th data-i18n="th_criteria2">Criteria</th><th data-i18n="th_points2">Points</th></tr>
+  <tr><td data-i18n="sc_bonus_1">Proper optimization setup (variables, objectives, constraints)</td><td>8</td></tr>
+  <tr><td data-i18n="sc_bonus_2">Pareto front (meaningful trade-off visualization)</td><td>7</td></tr>
+  <tr><td data-i18n="sc_bonus_3">Sensitivity analysis (identifies dominant variables)</td><td>5</td></tr>
+  <tr><td data-i18n="sc_bonus_4">Justified optimal point</td><td>5</td></tr>
 </table>
 </div>
 
-<h2><span class="num">C</span> Expected Results Benchmarks</h2>
+<h2 data-i18n="score_sec_c"><span class="num">C</span> Expected Results Benchmarks</h2>
 
 <div class="card">
-  <div class="card-header">Target ranges (evaluator reference)</div>
+  <div class="card-header" data-i18n="sc_target_ranges">Target ranges (evaluator reference)</div>
   <div class="table-wrap">
   <table>
     <tr><th>Parameter</th><th>Good</th><th>Excellent</th></tr>
@@ -1175,32 +1175,32 @@ L10h = (C/P)^3 &middot; 10&sup6; / (60&middot;n)       [hours, bearing life]</di
   </div>
 </div>
 
-<h2><span class="num">D</span> Red Flags</h2>
+<h2 data-i18n="score_sec_d"><span class="num">D</span> Red Flags</h2>
 
 <div class="card" style="border-color: rgba(239, 68, 68, 0.4);">
   <ul>
-    <li>Cannot explain KV-Kt relationship</li>
-    <li>Selects N52 magnets for high-temperature application</li>
-    <li>Ignores iron losses at &gt;1 kHz electrical frequency</li>
-    <li>No demagnetization check</li>
-    <li>Unrealistic fill factor (&gt; 0.6 for hand-wound concentrated)</li>
-    <li>No thermal analysis &mdash; "it'll be fine"</li>
-    <li>No trade-off discussion &mdash; presents design without alternatives</li>
-    <li>Copy-pasted motor design without customization</li>
-    <li>FEA without mesh convergence study</li>
-    <li>Claims &gt;95% efficiency for this motor class</li>
+    <li data-i18n="rf_1">Cannot explain KV-Kt relationship</li>
+    <li data-i18n="rf_2">Selects N52 magnets for high-temperature application</li>
+    <li data-i18n="rf_3">Ignores iron losses at &gt;1 kHz electrical frequency</li>
+    <li data-i18n="rf_4">No demagnetization check</li>
+    <li data-i18n="rf_5">Unrealistic fill factor (&gt; 0.6 for hand-wound concentrated)</li>
+    <li data-i18n="rf_6">No thermal analysis &mdash; "it'll be fine"</li>
+    <li data-i18n="rf_7">No trade-off discussion &mdash; presents design without alternatives</li>
+    <li data-i18n="rf_8">Copy-pasted motor design without customization</li>
+    <li data-i18n="rf_9">FEA without mesh convergence study</li>
+    <li data-i18n="rf_10">Claims &gt;95% efficiency for this motor class</li>
   </ul>
 </div>
 
-<h2><span class="num">E</span> Decision Matrix</h2>
+<h2 data-i18n="score_sec_e"><span class="num">E</span> Decision Matrix</h2>
 
 <div class="table-wrap">
 <table>
-  <tr><th>Level</th><th>Interview</th><th>Assignment</th><th>Action</th></tr>
-  <tr><td style="color: var(--success);">Strong Hire</td><td>&ge; 85</td><td>&ge; 80 + bonus &ge; 15</td><td>Extend offer</td></tr>
-  <tr><td style="color: var(--cyan);">Hire</td><td>&ge; 72</td><td>&ge; 70</td><td>Extend offer</td></tr>
-  <tr><td style="color: var(--warning);">Borderline</td><td>60-71</td><td>55-69</td><td>Second interview</td></tr>
-  <tr><td style="color: var(--danger);">No Hire</td><td>&lt; 60</td><td>&lt; 55</td><td>Decline</td></tr>
+  <tr><th data-i18n="th_level">Level</th><th data-i18n="th_interview">Interview</th><th data-i18n="th_assignment">Assignment</th><th data-i18n="th_action">Action</th></tr>
+  <tr><td style="color: var(--success);" data-i18n="dm_strong">Strong Hire</td><td>&ge; 85</td><td>&ge; 80 + bonus &ge; 15</td><td data-i18n="dm_offer">Extend offer</td></tr>
+  <tr><td style="color: var(--cyan);" data-i18n="dm_hire">Hire</td><td>&ge; 72</td><td>&ge; 70</td><td data-i18n="dm_offer2">Extend offer</td></tr>
+  <tr><td style="color: var(--warning);" data-i18n="dm_border">Borderline</td><td>60-71</td><td>55-69</td><td data-i18n="dm_second">Second interview</td></tr>
+  <tr><td style="color: var(--danger);" data-i18n="dm_no">No Hire</td><td>&lt; 60</td><td>&lt; 55</td><td data-i18n="dm_decline">Decline</td></tr>
 </table>
 </div>
 
@@ -1314,6 +1314,52 @@ const i18n = {
     task_22: 'Задача 2.2 — Електромагнітне проєктування',
     task_23: 'Задача 2.3 — Вибір матеріалів',
     task_24: 'Задача 2.4 — Тепловий аналіз',
+    // Task 2.1 card
+    task21_desc: 'Оберіть та обґрунтуйте кількісними аргументами:',
+    task21_l1: 'Топологію двигуна: аутраннер SPM, аутраннер IPM, інраннер або осьовий потік',
+    task21_l2: 'Комбінацію пазів/полюсів (з розрахунком обмоткового коефіцієнта)',
+    task21_l3: 'Конфігурацію обмотки: зосереджена vs розподілена, зірка vs трикутник',
+    task21_l4: 'Цільове значення KV (вивести з вимог тяги/пропелера/напруги)',
+    task21_deliv: '<strong>Результат:</strong> 1-2 сторінки обґрунтування з порівняльною таблицею \u22652 конфігурацій-кандидатів.',
+    // Task 2.2 card
+    task22_desc: 'Для обраної конфігурації розрахуйте або визначте через FEA:',
+    task22_l1: '<strong>Магнітне коло:</strong> густини потоку B_gap, B_tooth, B_yoke',
+    task22_l2: '<strong>Обмотка:</strong> витків/котушку, переріз дроту, паралельні жили, fill factor, R_phase, L_d, L_q',
+    task22_l3: '<strong>Характеристики:</strong> форма хвилі ЕРС (форма + амплітуда vs оберти), крива момент-струм, когінг-момент',
+    task22_l4: '<strong>Втрати:</strong> мідні (зависання + макс тяга), в сталі (гістерезис + вихрові), вихрові в магнітах',
+    task22_l5: '<strong>ККД:</strong> при 25%, 50%, 75%, 100% дроселя',
+    task22_deliv: '<strong>Результат:</strong> скріншоти FEA (густина потоку, ЕРС, когінг), файли розрахунків, зведена таблиця параметрів.',
+    // Task 2.3 demagnetization
+    task23_demag: 'Включіть <strong>перевірку на розмагнічування</strong> при максимальному струмі та максимальній робочій температурі.',
+    // Task 2.4 card
+    task24_desc: 'Виконайте теплову оцінку для безперервного режиму зависання:',
+    task24_l1: 'Визначте всі джерела тепла та їх потужності',
+    task24_l2: 'Оцініть температуру гарячої точки обмотки (LPTN або еквівалент)',
+    task24_l3: 'Підтвердіть, що температура магнітів у безпечних межах',
+    task24_l4: 'Запропонуйте стратегію охолодження (пасивне/активне, вентиляція, заливка)',
+    task24_deliv: '<strong>Результат:</strong> теплова схема, оцінки температур, рекомендації з охолодження.',
+    // Challenge task
+    challenge_title: '\u2733 Багатокритеріальна оптимізація (Бонус)',
+    challenge_desc: 'Визначте та виконайте багатокритеріальну оптимізацію:',
+    challenge_obj1: '<strong>Максимізувати</strong> ККД при зависанні (50% дроселя)',
+    challenge_obj2: '<strong>Мінімізувати</strong> когінг-момент (% від номінального)',
+    challenge_obj3: '<strong>Мінімізувати</strong> масу двигуна (активні матеріали)',
+    challenge_vars: '<strong>Змінні проєктування</strong> (мінімум 4):',
+    challenge_vars_list: 'Ширина зубця, розкриття паза, товщина магніту, коефіцієнт дуги магніту, витки/переріз дроту',
+    challenge_output: '<strong>Результат:</strong> фронт Парето, аналіз чутливості, рекомендована проєктна точка з обґрунтуванням.',
+    challenge_tools: 'Інструменти: Python + PyFEMM, MATLAB + FEA, оптимізатор MotorCAD, JMAG або ручний DOE.',
+    // Submission
+    sub_1: 'PDF-звіт (10-20 сторінок, структурований за задачами 2.1-2.4 + бонус)',
+    sub_2: 'Зведена таблиця параметрів (одна сторінка)',
+    sub_3: 'Файли моделі FEA (.fem / .lua / файли проєкту)',
+    sub_4: 'Скрипти розрахунків або електронні таблиці',
+    sub_5: 'Графіки ЕРС, когінг-моменту та густини потоку',
+    sub_6: 'Дані ефективності (зависання + макс тяга як мінімум)',
+    sub_7: 'BOM активних компонентів з орієнтовними цінами',
+    // Reference data
+    ref_prop_title: 'Характеристики пропелера (для розмірювання двигуна)',
+    ref_prop_note: 'Використовуйте ці оцінки для розмірювання за моментом/обертами. Фактичні дані можуть відрізнятись.',
+    ref_formulas_title: 'Корисні залежності',
     // Important notes
     notes_title: 'Важливі примітки',
     note_1: 'Немає єдиної "правильної" відповіді — ми оцінюємо інженерне мислення',
@@ -1324,6 +1370,44 @@ const i18n = {
     // Scoring
     score_title: 'Критерії оцінювання',
     score_subtitle: 'Тільки для внутрішнього використання <span class="sep"></span> Не показувати кандидатам',
+    score_sec_a: '<span class="num">A</span> Оцінка співбесіди (100 балів)',
+    score_sec_b: '<span class="num">B</span> Оцінка завдання (100 балів)',
+    score_sec_c: '<span class="num">C</span> Очікувані результати (бенчмарки)',
+    score_sec_d: '<span class="num">D</span> Червоні прапорці',
+    score_sec_e: '<span class="num">E</span> Матриця рішень',
+    score_bonus: 'Бонус: Челенж-завдання (+25 балів)',
+    // Scoring table headers
+    th_category: 'Категорія', th_questions: 'Питання', th_max_pts: 'Макс балів', th_min_senior: 'Мін для Senior',
+    th_task: 'Задача', th_criteria: 'Критерії', th_points: 'Бали', th_criteria2: 'Критерії', th_points2: 'Бали',
+    th_level: 'Рівень', th_interview: 'Співбесіда', th_assignment: 'Завдання', th_action: 'Дія',
+    // Scoring table content
+    sc_em_fund: 'ЕМ основи', sc_materials: 'Матеріали та компоненти', sc_methodology: 'Методологія проєктування',
+    sc_thermal: 'Термічні та механічні', sc_practical: 'Практичний досвід', sc_total: 'Всього', sc_total2: 'Всього',
+    sc_b_21: 'Правильна топологія, обґрунтування пазів/полюсів, вивід KV',
+    sc_b_22: 'Точність магнітного кола, обмотка, якість FEA, ефективність',
+    sc_b_23: 'Обґрунтований вибір матеріалів з даташитами, перевірка розмагнічування',
+    sc_b_24: 'Адекватна модель, правильні джерела тепла, життєздатне охолодження',
+    sc_report: 'Якість звіту', sc_b_report: 'Структура, ясність, задокументовані допущення',
+    sc_scripts: 'Скрипти', sc_b_scripts: 'Параметризована модель, відтворюваний аналіз',
+    sc_bonus_1: 'Правильна постановка оптимізації (змінні, цілі, обмеження)',
+    sc_bonus_2: 'Фронт Парето (змістовна візуалізація компромісів)',
+    sc_bonus_3: 'Аналіз чутливості (визначення домінантних змінних)',
+    sc_bonus_4: 'Обґрунтована оптимальна точка',
+    sc_target_ranges: 'Цільові діапазони (довідка для оцінювача)',
+    // Red flags
+    rf_1: 'Не може пояснити зв\'язок KV-Kt',
+    rf_2: 'Обирає магніти N52 для високотемпературного застосування',
+    rf_3: 'Ігнорує втрати в сталі при >1 кГц електричної частоти',
+    rf_4: 'Без перевірки на розмагнічування',
+    rf_5: 'Нереалістичний fill factor (>0.6 для ручної зосередженої обмотки)',
+    rf_6: 'Без теплового аналізу — "і так нормально"',
+    rf_7: 'Без обговорення компромісів — подає проєкт без альтернатив',
+    rf_8: 'Скопійований проєкт двигуна без адаптації',
+    rf_9: 'FEA без дослідження збіжності сітки',
+    rf_10: 'Заявляє >95% ККД для цього класу двигунів',
+    // Decision matrix
+    dm_strong: 'Сильний найм', dm_hire: 'Найм', dm_border: 'На межі', dm_no: 'Відмова',
+    dm_offer: 'Зробити оферту', dm_offer2: 'Зробити оферту', dm_second: 'Повторна співбесіда', dm_decline: 'Відмовити',
     // Modal
     modal_title: 'Доступ до критеріїв оцінки',
     modal_text: 'Цей розділ лише для внутрішнього використання. Введіть код доступу.',
@@ -1434,16 +1518,15 @@ function setLang(lang) {
     if (ps[3] && t.eval_p4) { if (!enContent._eval_p4) enContent._eval_p4 = ps[3].innerHTML; ps[3].innerHTML = t.eval_p4; }
   }
 
-  // Assignment section headers (h2 with .num child + h3)
-  document.querySelectorAll('#tab-assignment [data-i18n]').forEach(el => {
+  // Assignment + Scoring section elements (h2 with .num child need special handling)
+  document.querySelectorAll('#tab-assignment [data-i18n], #tab-scoring [data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (!enContent[key]) enContent[key] = el.innerHTML;
     if (!t[key]) return;
-    const num = el.querySelector('.num');
-    if (num) {
-      el.innerHTML = '';
-      el.appendChild(num);
-      el.appendChild(document.createTextNode(' ' + t[key]));
+    // h2 with .num span: preserve the span, replace text
+    if (el.tagName === 'H2' && el.querySelector('.num')) {
+      const num = el.querySelector('.num');
+      el.innerHTML = t[key]; // translation includes <span class="num">X</span>
     } else {
       el.innerHTML = t[key];
     }
@@ -1560,202 +1643,155 @@ async function downloadPDF() {
   btn.disabled = true;
 
   const style = document.createElement('style');
-  style.textContent = '@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}} .pdf-render-container{position:fixed!important;top:0!important;left:0!important;z-index:-1!important;opacity:1!important;pointer-events:none!important;}';
+  style.textContent = '@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}';
   document.head.appendChild(style);
 
-  // Build a self-contained print-friendly div (not a clone of dark-themed panel)
+  // Build a self-contained print-friendly div
   const container = document.createElement('div');
-  container.className = 'pdf-render-container';
-  container.style.cssText = 'width:720px;background:#fff;padding:28px 32px;font-family:Inter,Arial,Helvetica,sans-serif;color:#1a1a1a;line-height:1.55;';
+  container.id = 'pdf-render-root';
+  // IMPORTANT: position absolute, visible, on-screen — html2canvas needs this
+  container.style.cssText = 'position:absolute;top:0;left:0;width:720px;background:#ffffff;padding:28px 32px;font-family:Arial,Helvetica,sans-serif;color:#1a1a1a;line-height:1.55;z-index:9999;';
 
-  // Get source HTML from the assignment panel
-  const panel = document.getElementById('tab-assignment');
+  container.innerHTML = '<div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;padding-bottom:14px;border-bottom:2.5px solid #0097A7;">'
+    + '<div style="width:34px;height:34px;border:2.5px solid #0097A7;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:10px;color:#0097A7;letter-spacing:1px;">OMD</div>'
+    + '<div>'
+    + '<div style="font-size:15px;font-weight:700;letter-spacing:2.5px;color:#0097A7;">OMD SYSTEMS</div>'
+    + '<div style="font-size:9px;color:#888;letter-spacing:1px;margin-top:1px;">SENIOR MOTOR DESIGN ENGINEER — TECHNICAL ASSESSMENT</div>'
+    + '</div>'
+    + '<div style="margin-left:auto;font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:1px;">Confidential</div>'
+    + '</div>'
 
-  container.innerHTML = `
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;padding-bottom:14px;border-bottom:2.5px solid #0097A7;">
-      <svg viewBox="0 0 42 42" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M21 2L38.3 11.5V30.5L21 40L3.7 30.5V11.5L21 2Z" stroke="#0097A7" stroke-width="2.5" fill="none"/>
-        <text x="21" y="25" text-anchor="middle" fill="#0097A7" font-family="Arial,sans-serif" font-weight="800" font-size="11" letter-spacing="1.5">OMD</text>
-      </svg>
-      <div>
-        <div style="font-size:15px;font-weight:700;letter-spacing:2.5px;color:#0097A7;">OMD SYSTEMS</div>
-        <div style="font-size:9px;color:#888;letter-spacing:1px;margin-top:1px;">SENIOR MOTOR DESIGN ENGINEER &mdash; TECHNICAL ASSESSMENT</div>
-      </div>
-      <div style="margin-left:auto;font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:1px;">Confidential</div>
-    </div>
+    + '<h1 style="font-size:20px;font-weight:700;color:#111;margin:0 0 4px;">Design Assignment — High-Torque Outrunner Motor</h1>'
+    + '<p style="font-size:11px;color:#888;margin:0 0 20px;">Take-home assignment • Estimated: 6-8 hours • Deadline: 5 business days</p>'
 
-    <h1 style="font-size:20px;font-weight:700;color:#111;margin:0 0 4px;">Design Assignment &mdash; High-Torque Outrunner Motor</h1>
-    <p style="font-size:11px;color:#888;margin-bottom:20px;">Take-home assignment &nbsp;&bull;&nbsp; Estimated: 6-8 hours &nbsp;&bull;&nbsp; Deadline: 5 business days</p>
+    + '<div style="background:#f0fafa;border:2px solid #0097A7;border-radius:8px;padding:16px;margin-bottom:16px;">'
+    + '<div style="font-size:12px;font-weight:700;color:#0097A7;margin-bottom:8px;">Overview</div>'
+    + '<p style="font-size:11px;color:#374151;margin:0 0 8px;">OMD Systems is developing a propulsion system for a heavy-lift multirotor UAV platform. You are tasked with the electromagnetic design of the propulsion motor based on the requirements below. The goal is to maximize efficiency and thrust density while meeting all constraints.</p>'
+    + '<p style="font-size:10px;color:#888;margin:0;">You may use any EM design tool: MotorCAD, ANSYS Maxwell, JMAG, FEMM, MotorAnalysis-PM, or analytical calculations + Python.</p>'
+    + '</div>'
 
-    <div style="background:#f0fafa;border:2px solid #0097A7;border-radius:8px;padding:16px;margin-bottom:16px;">
-      <div style="font-size:12px;font-weight:700;color:#0097A7;margin-bottom:8px;">Overview</div>
-      <p style="font-size:11px;color:#374151;margin:0 0 8px;">OMD Systems is developing a propulsion system for a heavy-lift multirotor UAV platform. You are tasked with the electromagnetic design of the propulsion motor based on the requirements below. The goal is to maximize efficiency and thrust density while meeting all constraints.</p>
-      <p style="font-size:10px;color:#888;margin:0;">You may use any EM design tool: MotorCAD, ANSYS Maxwell, JMAG, FEMM, MotorAnalysis-PM, or analytical calculations + Python.</p>
-    </div>
+    + '<h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">1. System Requirements</h2>'
+    + '<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:16px;">'
+    + '<tr><th style="background:#f3f4f6;color:#374151;font-size:10px;padding:7px 10px;text-align:left;border-bottom:1px solid #ddd;">Parameter</th><th style="background:#f3f4f6;color:#374151;font-size:10px;padding:7px 10px;text-align:left;border-bottom:1px solid #ddd;">Requirement</th><th style="background:#f3f4f6;color:#374151;font-size:10px;padding:7px 10px;text-align:left;border-bottom:1px solid #ddd;">Notes</th></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Application</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">Heavy-lift multicopter (6-8 motors)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Agricultural / cargo</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Propeller</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">29-32 inch CF, fixed-pitch</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Folding type</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Thrust/motor (max)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2265 16 kg</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Sea level, ISA</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Thrust/motor (hover)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">6-8 kg</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">~50% throttle</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">DC bus voltage</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">6S-12S LiPo (22.2-50.4 V)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Nominal 12S = 44.4 V</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Continuous current</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 40 A</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">ESC thermal limit</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Peak current (180s)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 70 A</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">ESC peak rating</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Motor OD</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 92 mm</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Arm clearance</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Motor weight</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 700 g</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Including leads</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Ambient temp</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">\u221210\u00b0C to +45\u00b0C</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Agricultural</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">IP rating</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">IP55 minimum</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Dust + water jets</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Service life</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">\u2265 1000 hours</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Before bearing repl.</td></tr>'
+    + '<tr><td style="padding:6px 10px;font-weight:500;">Vibration</td><td style="padding:6px 10px;">Grade A (ISO 10816)</td><td style="padding:6px 10px;color:#666;">Smooth operation</td></tr>'
+    + '</table>'
 
-    <h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">1. System Requirements</h2>
-    <table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:16px;">
-      <tr><th style="background:#f3f4f6;color:#374151;font-size:10px;padding:7px 10px;text-align:left;border-bottom:1px solid #ddd;">Parameter</th><th style="background:#f3f4f6;color:#374151;font-size:10px;padding:7px 10px;text-align:left;border-bottom:1px solid #ddd;">Requirement</th><th style="background:#f3f4f6;color:#374151;font-size:10px;padding:7px 10px;text-align:left;border-bottom:1px solid #ddd;">Notes</th></tr>
-      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Application</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">Heavy-lift multicopter (6-8 motors)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Agricultural / cargo</td></tr>
-      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Propeller</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">29-32 inch CF, fixed-pitch</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Folding type</td></tr>
-      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Thrust/motor (max)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">&ge; 16 kg</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Sea level, ISA</td></tr>
-      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Thrust/motor (hover)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">6-8 kg</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">~50% throttle</td></tr>
-      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">DC bus voltage</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">6S-12S LiPo (22.2-50.4 V)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Nominal 12S = 44.4 V</td></tr>
-      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Continuous current</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">&le; 40 A</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">ESC thermal limit</td></tr>
-      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Peak current (180s)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">&le; 70 A</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">ESC peak rating</td></tr>
-      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Motor OD</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">&le; 92 mm</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Arm clearance</td></tr>
-      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Motor weight</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">&le; 700 g</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Including leads</td></tr>
-      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Ambient temp</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">&minus;10&deg;C to +45&deg;C</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Agricultural</td></tr>
-      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">IP rating</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">IP55 minimum</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Dust + water jets</td></tr>
-      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Service life</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">&ge; 1000 hours</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Before bearing repl.</td></tr>
-      <tr><td style="padding:6px 10px;font-weight:500;">Vibration</td><td style="padding:6px 10px;">Grade A (ISO 10816)</td><td style="padding:6px 10px;color:#666;">Smooth operation</td></tr>
-    </table>
+    + '<h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">2. Design Tasks</h2>'
 
-    <h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">2. Design Tasks</h2>
+    + '<h3 style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px;">Task 2.1 — Topology Selection & Justification</h3>'
+    + '<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin-bottom:12px;">'
+    + '<p style="font-size:11px;color:#374151;margin:0 0 6px;">Select and justify with quantitative reasoning:</p>'
+    + '<ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;"><li>Motor topology: outrunner SPM, outrunner IPM, inrunner, or axial flux</li><li>Slot/pole combination (with winding factor calculation)</li><li>Winding configuration: concentrated vs distributed, star vs delta</li><li>Target KV value (derive from thrust/propeller/voltage requirements)</li></ul>'
+    + '<p style="font-size:10px;color:#666;margin:8px 0 0;"><b>Deliverable:</b> 1-2 page justification with comparison table of \u22652 candidate configurations.</p>'
+    + '</div>'
 
-    <h3 style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px;">Task 2.1 &mdash; Topology Selection &amp; Justification</h3>
-    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:12px;">
-      <p style="font-size:11px;color:#374151;margin:0 0 6px;">Select and justify with quantitative reasoning:</p>
-      <ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;">
-        <li>Motor topology: outrunner SPM, outrunner IPM, inrunner, or axial flux</li>
-        <li>Slot/pole combination (with winding factor calculation)</li>
-        <li>Winding configuration: concentrated vs distributed, star vs delta</li>
-        <li>Target KV value (derive from thrust/propeller/voltage requirements)</li>
-      </ul>
-      <p style="font-size:10px;color:#666;margin:8px 0 0;"><strong>Deliverable:</strong> 1-2 page justification with comparison table of &ge;2 candidate configurations.</p>
-    </div>
+    + '<h3 style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px;">Task 2.2 — Electromagnetic Design</h3>'
+    + '<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin-bottom:12px;">'
+    + '<p style="font-size:11px;color:#374151;margin:0 0 6px;">Calculate or determine through FEA:</p>'
+    + '<ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;"><li><b>Magnetic circuit:</b> B_gap, B_tooth, B_yoke</li><li><b>Winding:</b> Turns/coil, wire gauge, parallel strands, fill factor, R_phase, L_d, L_q</li><li><b>Performance:</b> Back-EMF waveform, torque-current curve, cogging torque</li><li><b>Losses:</b> Copper (hover + max), iron (hysteresis + eddy), magnet eddy</li><li><b>Efficiency:</b> At 25%, 50%, 75%, 100% throttle</li></ul>'
+    + '<p style="font-size:10px;color:#666;margin:8px 0 0;"><b>Deliverable:</b> FEA screenshots, calculation files, parameter summary table.</p>'
+    + '</div>'
 
-    <h3 style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px;">Task 2.2 &mdash; Electromagnetic Design</h3>
-    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:12px;">
-      <p style="font-size:11px;color:#374151;margin:0 0 6px;">Calculate or determine through FEA:</p>
-      <ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;">
-        <li><strong>Magnetic circuit:</strong> B_gap, B_tooth, B_yoke</li>
-        <li><strong>Winding:</strong> Turns/coil, wire gauge, parallel strands, fill factor, R_phase, L_d, L_q</li>
-        <li><strong>Performance:</strong> Back-EMF waveform, torque-current curve, cogging torque</li>
-        <li><strong>Losses:</strong> Copper (hover + max), iron (hysteresis + eddy), magnet eddy</li>
-        <li><strong>Efficiency:</strong> At 25%, 50%, 75%, 100% throttle</li>
-      </ul>
-      <p style="font-size:10px;color:#666;margin:8px 0 0;"><strong>Deliverable:</strong> FEA screenshots, calculation files, parameter summary table.</p>
-    </div>
+    + '<h3 style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px;">Task 2.3 — Material Selection</h3>'
+    + '<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin-bottom:12px;">'
+    + '<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:8px;"><tr><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Component</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Specify</th></tr><tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Stator lamination</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">Grade, thickness, core loss at operating frequency</td></tr><tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Permanent magnets</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">Grade, Br, Hcj, BHmax, max temperature, dimensions</td></tr><tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Magnet wire</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">Material, gauge, insulation class, parallel strands</td></tr><tr><td style="padding:5px 10px;font-weight:500;">Rotor bell</td><td style="padding:5px 10px;">Material, wall thickness, surface treatment</td></tr></table>'
+    + '<p style="font-size:10px;color:#666;margin:0;">Include a <b>demagnetization check</b> at max current and max operating temperature.</p>'
+    + '</div>'
 
-    <h3 style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px;">Task 2.3 &mdash; Material Selection</h3>
-    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:12px;">
-      <table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:8px;">
-        <tr><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Component</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Specify</th></tr>
-        <tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Stator lamination</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">Grade, thickness, core loss at operating frequency</td></tr>
-        <tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Permanent magnets</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">Grade, Br, Hcj, BHmax, max temperature, dimensions</td></tr>
-        <tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Magnet wire</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">Material, gauge, insulation class, parallel strands</td></tr>
-        <tr><td style="padding:5px 10px;font-weight:500;">Rotor bell</td><td style="padding:5px 10px;">Material, wall thickness, surface treatment</td></tr>
-      </table>
-      <p style="font-size:10px;color:#666;margin:0;">Include a <strong>demagnetization check</strong> at max current and max operating temperature.</p>
-    </div>
+    + '<h3 style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px;">Task 2.4 — Thermal Assessment</h3>'
+    + '<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin-bottom:12px;">'
+    + '<ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;"><li>Identify all heat sources and magnitudes</li><li>Estimate winding hot-spot temperature (LPTN or equivalent)</li><li>Confirm magnet temperature within safe limits</li><li>Suggest cooling strategy</li></ul>'
+    + '<p style="font-size:10px;color:#666;margin:8px 0 0;"><b>Deliverable:</b> Thermal circuit diagram, temperature estimates, cooling recommendations.</p>'
+    + '</div>'
 
-    <h3 style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px;">Task 2.4 &mdash; Thermal Assessment</h3>
-    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:12px;">
-      <ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;">
-        <li>Identify all heat sources and magnitudes</li>
-        <li>Estimate winding hot-spot temperature (LPTN or equivalent)</li>
-        <li>Confirm magnet temperature within safe limits</li>
-        <li>Suggest cooling strategy</li>
-      </ul>
-      <p style="font-size:10px;color:#666;margin:8px 0 0;"><strong>Deliverable:</strong> Thermal circuit diagram, temperature estimates, cooling recommendations.</p>
-    </div>
+    + '<h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">3. Challenge Task (Bonus)</h2>'
+    + '<div style="background:#fffbeb;border:1px solid #fbbf24;border-radius:8px;padding:14px;margin-bottom:16px;">'
+    + '<h3 style="font-size:12px;font-weight:700;color:#d97706;margin:0 0 8px;">\u2733 Multi-Objective Optimization</h3>'
+    + '<p style="font-size:11px;color:#374151;margin:0 0 6px;">Define and execute optimization with objectives:</p>'
+    + '<ol style="font-size:11px;color:#374151;margin:0 0 6px;padding-left:18px;"><li><b>Maximize</b> efficiency at hover (50% throttle)</li><li><b>Minimize</b> cogging torque (% of rated)</li><li><b>Minimize</b> motor weight (active materials)</li></ol>'
+    + '<p style="font-size:11px;color:#374151;margin:0 0 6px;"><b>Variables (min 4):</b> tooth width, slot opening, magnet thickness, magnet arc ratio, turns/wire gauge</p>'
+    + '<p style="font-size:11px;color:#374151;margin:0 0 4px;"><b>Output:</b> Pareto front, sensitivity analysis, recommended design point with justification.</p>'
+    + '<p style="font-size:10px;color:#888;margin:0;">Tools: Python+PyFEMM, MATLAB+FEA, MotorCAD optimizer, JMAG, or manual DOE.</p>'
+    + '</div>'
 
-    <h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">3. Challenge Task (Bonus)</h2>
-    <div style="background:#fffbeb;border:1px solid #fbbf24;border-radius:8px;padding:14px;margin-bottom:16px;">
-      <h3 style="font-size:12px;font-weight:700;color:#d97706;margin:0 0 8px;">&#9733; Multi-Objective Optimization</h3>
-      <p style="font-size:11px;color:#374151;margin:0 0 6px;">Define and execute optimization with objectives:</p>
-      <ol style="font-size:11px;color:#374151;margin:0 0 6px;padding-left:18px;">
-        <li><strong>Maximize</strong> efficiency at hover (50% throttle)</li>
-        <li><strong>Minimize</strong> cogging torque (% of rated)</li>
-        <li><strong>Minimize</strong> motor weight (active materials)</li>
-      </ol>
-      <p style="font-size:11px;color:#374151;margin:0 0 6px;"><strong>Variables (min 4):</strong> tooth width, slot opening, magnet thickness, magnet arc ratio, turns/wire gauge</p>
-      <p style="font-size:11px;color:#374151;margin:0 0 4px;"><strong>Output:</strong> Pareto front, sensitivity analysis, recommended design point with justification.</p>
-      <p style="font-size:10px;color:#888;margin:0;">Tools: Python+PyFEMM, MATLAB+FEA, MotorCAD optimizer, JMAG, or manual DOE.</p>
-    </div>
+    + '<h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">4. Submission</h2>'
+    + '<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin-bottom:16px;">'
+    + '<ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;"><li>PDF report (10-20 pages, structured per tasks 2.1-2.4 + bonus)</li><li>Complete parameter summary table (single page)</li><li>FEA model files (.fem / .lua / project files)</li><li>Calculation scripts or spreadsheets</li><li>Back-EMF, cogging torque, and flux density plots</li><li>Efficiency data (hover + max thrust at minimum)</li><li>Active component BOM with estimated costs</li></ul>'
+    + '</div>'
 
-    <h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">4. Submission</h2>
-    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:16px;">
-      <ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;">
-        <li>PDF report (10-20 pages, structured per tasks 2.1-2.4 + bonus)</li>
-        <li>Complete parameter summary table (single page)</li>
-        <li>FEA model files (.fem / .lua / project files)</li>
-        <li>Calculation scripts or spreadsheets</li>
-        <li>Back-EMF, cogging torque, and flux density plots</li>
-        <li>Efficiency data (hover + max thrust at minimum)</li>
-        <li>Active component BOM with estimated costs</li>
-      </ul>
-    </div>
+    + '<h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">5. Reference Data</h2>'
+    + '<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin-bottom:12px;">'
+    + '<div style="font-size:11px;font-weight:700;color:#111;margin-bottom:6px;">Propeller Performance (for motor sizing)</div>'
+    + '<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:4px;"><tr><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Propeller</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Thrust (kg)</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">RPM</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Torque (Nm)</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Power (W)</th></tr>'
+    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2000</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1.7</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">360</td></tr>'
+    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">8.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2930</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1090</td></tr>'
+    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">13.7</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3680</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">5.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2220</td></tr>'
+    + '<tr><td style="padding:5px 10px;">30\u00d710.5" CF</td><td style="padding:5px 10px;">18.3</td><td style="padding:5px 10px;">4210</td><td style="padding:5px 10px;">7.9</td><td style="padding:5px 10px;">3500</td></tr>'
+    + '</table></div>'
 
-    <h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">5. Reference Data</h2>
-    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:12px;">
-      <div style="font-size:11px;font-weight:700;color:#111;margin-bottom:6px;">Propeller Performance (for motor sizing)</div>
-      <table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:4px;">
-        <tr><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Propeller</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Thrust (kg)</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">RPM</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Torque (Nm)</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Power (W)</th></tr>
-        <tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30&times;10.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2000</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1.7</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">360</td></tr>
-        <tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30&times;10.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">8.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2930</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1090</td></tr>
-        <tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30&times;10.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">13.7</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3680</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">5.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2220</td></tr>
-        <tr><td style="padding:5px 10px;">30&times;10.5" CF</td><td style="padding:5px 10px;">18.3</td><td style="padding:5px 10px;">4210</td><td style="padding:5px 10px;">7.9</td><td style="padding:5px 10px;">3500</td></tr>
-      </table>
-    </div>
+    + '<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin-bottom:16px;">'
+    + '<div style="font-size:11px;font-weight:700;color:#111;margin-bottom:6px;">Useful Relationships</div>'
+    + '<div style="background:#f3f4f6;border:1px solid #e5e7eb;border-radius:4px;padding:10px 12px;font-family:monospace;font-size:10px;color:#0097A7;line-height:1.7;white-space:pre;">Kt = 60 / (2\u03c0 \u00b7 KV)              [Nm/A]\nB_gap = Br \u00b7 Lm / (Lm + \u03bcr \u00b7 g)    [T]\n\u03a6 = B_gap \u00b7 \u03b1p \u00b7 (\u03c0D / 2p) \u00b7 L   [Wb]\nP_iron \u2248 kh\u00b7f\u00b7B\u00b2 + ke\u00b7f\u00b2\u00b7B\u00b2       [W/kg]\nL10h = (C/P)^3 \u00b7 10\u2076 / (60\u00b7n)       [hours]</div>'
+    + '</div>'
 
-    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:16px;">
-      <div style="font-size:11px;font-weight:700;color:#111;margin-bottom:6px;">Useful Relationships</div>
-      <pre style="background:#f3f4f6;border:1px solid #e5e7eb;border-radius:4px;padding:10px 12px;font-family:monospace;font-size:10px;color:#0097A7;margin:0;white-space:pre;line-height:1.6;">Kt = 60 / (2&pi; &middot; KV)              [Nm/A]
-B_gap = Br &middot; Lm / (Lm + &mu;r &middot; g)    [T]
-&Phi; = B_gap &middot; &alpha;p &middot; (&pi;D / 2p) &middot; L   [Wb]
-P_iron &asymp; kh&middot;f&middot;B&sup2; + ke&middot;f&sup2;&middot;B&sup2;       [W/kg]
-L10h = (C/P)^3 &middot; 10&sup6; / (60&middot;n)       [hours]</pre>
-    </div>
+    + '<div style="background:#fff7ed;border:1px solid #f59e0b;border-radius:8px;padding:12px;margin-bottom:16px;">'
+    + '<div style="font-size:11px;font-weight:700;color:#d97706;margin-bottom:6px;">Important Notes</div>'
+    + '<ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;"><li>No single "correct" answer — we evaluate engineering reasoning</li><li>State assumptions clearly and justify every design choice</li><li>If data is missing, make reasonable estimates and note them</li><li>Quality of analysis > quantity of pages</li><li>Challenge task (Section 3) is optional but strongly differentiates candidates</li></ul>'
+    + '</div>'
 
-    <div style="background:#fff7ed;border:1px solid #f59e0b;border-radius:6px;padding:12px;margin-bottom:16px;">
-      <div style="font-size:11px;font-weight:700;color:#d97706;margin-bottom:6px;">Important Notes</div>
-      <ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;">
-        <li>No single "correct" answer &mdash; we evaluate engineering reasoning</li>
-        <li>State assumptions clearly and justify every design choice</li>
-        <li>If data is missing, make reasonable estimates and note them</li>
-        <li>Quality of analysis &gt; quantity of pages</li>
-        <li>Challenge task (Section 3) is optional but strongly differentiates candidates</li>
-      </ul>
-    </div>
-
-    <div style="text-align:center;color:#ccc;font-size:9px;margin-top:24px;padding-top:12px;border-top:1px solid #eee;">
-      &copy; 2026 OMD Systems &mdash; omdsystems.com &mdash; All rights reserved. This document is confidential.
-    </div>
-  `;
+    + '<div style="text-align:center;color:#ccc;font-size:9px;margin-top:24px;padding-top:12px;border-top:1px solid #eee;">\u00a9 2026 OMD Systems — omdsystems.com — All rights reserved. This document is confidential.</div>';
 
   document.body.appendChild(container);
 
-  // Small delay for fonts to load in the render container
-  await new Promise(r => setTimeout(r, 300));
+  // Wait for rendering
+  await new Promise(r => setTimeout(r, 500));
 
   try {
-    await html2pdf().set({
-      margin: [10, 10, 10, 10],
+    const canvas = await html2canvas(container, {
+      scale: 2,
+      backgroundColor: '#ffffff',
+      useCORS: true,
+      logging: false,
+      width: 720,
+      windowWidth: 720
+    });
+
+    const imgData = canvas.toDataURL('image/jpeg', 0.95);
+    const { jsPDF } = window.jspdf || {};
+
+    // Use jsPDF from html2pdf bundle
+    const pdf = html2pdf().set({
+      margin: [8, 8, 8, 8],
       filename: 'OMD-Systems-Motor-Design-Assignment.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
+      image: { type: 'jpeg', quality: 0.95 },
       html2canvas: {
         scale: 2,
         backgroundColor: '#ffffff',
         useCORS: true,
-        scrollX: 0,
-        scrollY: 0,
+        logging: false,
+        width: 720,
         windowWidth: 720
       },
-      jsPDF: {
-        unit: 'mm', format: 'a4', orientation: 'portrait',
-        encryption: {
-          userPassword: '',
-          ownerPassword: 'OMD-HR-2026!SecureDoc',
-          userPermissions: ['print']
-        }
-      },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
       pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-    }).from(container).save();
+    });
+
+    await pdf.from(container).save();
   } catch(e) {
-    console.error('PDF error:', e);
-    alert('PDF generation failed. Try Ctrl+P to print instead.');
+    console.error('PDF generation error:', e);
+    alert('PDF error: ' + e.message + '\n\nUse Ctrl+P (Print) as fallback.');
   }
 
   document.body.removeChild(container);
