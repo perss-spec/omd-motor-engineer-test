@@ -42,7 +42,6 @@ body {
 
 /* ─── Header ─── */
 .header {
-  background: var(--card);
   border-bottom: 1px solid var(--border);
   padding: 16px 40px;
   display: flex;
@@ -701,13 +700,13 @@ li { margin-bottom: 5px; }
 </button>
 
 <!-- Category A -->
-<h2><span class="num">A</span> Electromagnetic Fundamentals</h2>
+<h2><span class="num">A</span> Electromagnetic Theory &amp; Fundamentals</h2>
 
 <div class="q-block">
   <div class="q-num">1</div>
   <div>
-    <div class="q-text">Explain the difference between SPM (Surface Permanent Magnet) and IPM (Interior PM) topologies. When would you choose one over the other for a UAV propulsion motor?</div>
-    <div class="q-hint">Look for: reluctance torque contribution in IPM, saliency ratio Ld/Lq, field weakening capability, manufacturing complexity. SPM preferred for outrunner drones (simpler, higher torque density at low speed).</div>
+    <div class="q-text">Explain the difference between SPM (Surface Permanent Magnet) and IPM (Interior PM) topologies. When would you choose one over the other for a direct-drive propulsion application?</div>
+    <div class="q-hint">Look for: reluctance torque in IPM, saliency ratio Ld/Lq, field weakening capability, manufacturing complexity. SPM preferred for low-speed direct-drive (simpler, higher torque density at low speed, no reluctance needed).</div>
   </div>
 </div>
 
@@ -722,8 +721,8 @@ li { margin-bottom: 5px; }
 <div class="q-block">
   <div class="q-num">3</div>
   <div>
-    <div class="q-text">For a 36-slot / 42-pole fractional-slot concentrated winding motor: calculate the winding factor. Why is this configuration popular for drone outrunner motors?</div>
-    <div class="q-hint">Kw = 0.933 (q = 2/7). High LCM = 252 reduces cogging. Symmetry = 6 reduces radial forces. Short end-windings = less copper loss, lighter.</div>
+    <div class="q-text">Explain the concept of winding factor in fractional-slot concentrated-wound machines. How do pitch and distribution factors combine, and why do FSCW motors dominate in low-speed high-torque applications?</div>
+    <div class="q-hint">Kw = Kp &times; Kd. FSCW: short end-windings &rarr; lighter, less Cu loss. High LCM reduces cogging. Trade-off: higher space harmonics &rarr; more eddy losses in magnets. Typical Kw = 0.86-0.95 depending on slot/pole.</div>
   </div>
 </div>
 
@@ -731,187 +730,187 @@ li { margin-bottom: 5px; }
   <div class="q-num">4</div>
   <div>
     <div class="q-text">How does cogging torque depend on the LCM of slots and poles? List 3 techniques to minimize it without changing the slot-pole combination.</div>
-    <div class="q-hint">Higher LCM = lower amplitude. Techniques: magnet arc shaping (bread-loaf), skewing (1 slot pitch), slot opening optimization, dummy slots, chamfered magnet edges.</div>
+    <div class="q-hint">Higher LCM = lower cogging amplitude. Techniques: magnet arc shaping (bread-loaf), skewing (1 slot pitch), slot opening optimization, dummy slots, chamfered magnet edges.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">5</div>
   <div>
-    <div class="q-text">Explain the field weakening region. What determines maximum speed? What is the "characteristic current" and why is it important?</div>
-    <div class="q-hint">I_char = &lambda;_m / Ld. When I_char = I_rated &rarr; infinite CPSR (ideal FW). SPM has limited FW range due to low Ld. Maximum speed limited by DC bus voltage vs back-EMF.</div>
+    <div class="q-text">Explain the field weakening region for a PMSM. What determines maximum speed? What is the &ldquo;characteristic current&rdquo; and why is it critical for constant-power speed range?</div>
+    <div class="q-hint">I_char = &lambda;_m / Ld. When I_char = I_rated &rarr; infinite CPSR (ideal FW). SPM has limited FW range due to low Ld. Max speed limited by DC bus voltage vs back-EMF.</div>
   </div>
 </div>
 
 <!-- Category B -->
-<h2><span class="num">B</span> Materials &amp; Component Selection</h2>
+<h2><span class="num">B</span> FEA &amp; Simulation Methodology</h2>
 
 <div class="q-block">
   <div class="q-num">6</div>
   <div>
-    <div class="q-text">Compare N42SH, N45UH, and N52 magnet grades. Which would you select for an agricultural drone motor at ambient 40&deg;C and winding temperature 130&deg;C? Justify.</div>
-    <div class="q-hint">N42SH: Br = 1.30T, Tmax = 150&deg;C, good margin. N52: Br = 1.45T but Tmax = 80&deg;C &mdash; will demagnetize. N45UH: Tmax = 180&deg;C, premium cost. N42SH is the sweet spot.</div>
+    <div class="q-text">How do you model iron losses in a motor operating at high electrical frequency? Compare the classical Steinmetz equation with the Bertotti three-term model.</div>
+    <div class="q-hint">Steinmetz: P = k&middot;f^a&middot;B^b (empirical, single frequency). Bertotti: P = k_h&middot;f&middot;B&sup2; + k_e&middot;f&sup2;&middot;B&sup2; + k_a&middot;f^1.5&middot;B^1.5 (hysteresis + eddy + anomalous). Bertotti better for wide frequency range. At f &gt; 400 Hz eddy term dominates.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">7</div>
   <div>
-    <div class="q-text">A motor with 21 pole pairs at 4000 RPM has electrical frequency ~1400 Hz. How does this affect lamination material and thickness selection?</div>
-    <div class="q-hint">At f &gt; 400 Hz, eddy current losses dominate. P_eddy ~ f&sup2;&middot;t&sup2;. Need 0.2-0.35 mm laminations. M19 (0.35 mm) minimum. B20AV1200 (0.2 mm) or NO20 preferred for premium.</div>
+    <div class="q-text">When is 3D FEA necessary versus 2D sufficient for motor analysis? Give specific examples where 2D would give misleading results.</div>
+    <div class="q-hint">3D needed for: axial flux machines, end-winding inductance/losses, short stack lengths (L/D &lt; 0.3), 3D magnet shaping (step-skew), end-effects. 2D overestimates performance by 5-10% for short machines. 2D fine for long machines with simple end-windings.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">8</div>
   <div>
-    <div class="q-text">When is concentrated winding preferred over distributed? What are the trade-offs in harmonics, cogging, and copper losses?</div>
-    <div class="q-hint">Concentrated: short end-windings (less Cu loss, lighter), easier manufacturing. Downsides: higher space harmonics &rarr; more eddy losses in magnets. Distributed: smoother EMF, lower harmonics, but longer end-windings.</div>
+    <div class="q-text">Your 2D FEA predicts the back-EMF constant, but the prototype measures 12% lower. Systematically list all possible causes and how you would diagnose each.</div>
+    <div class="q-hint">Causes: magnet Br tolerance (&minus;5%), temperature derating, 3D end-effects (2D overestimates), stacking factor error, air gap larger than nominal, magnet assembly shift, wrong BH data. Diagnosis: measure actual Br, check mechanical gaps, thermal measurement.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">9</div>
   <div>
-    <div class="q-text">What factors determine the optimal air gap length in an outrunner motor? What happens if it's too small or too large?</div>
-    <div class="q-hint">Factors: mechanical clearance, magnet retention band, manufacturing tolerances. Too small: assembly risk, higher cogging. Too large: lower B_gap, reduced torque density, increased leakage flux.</div>
+    <div class="q-text">How do you set up multi-objective optimization for a motor design? Walk through variable selection, objective functions, constraints, and algorithm choice.</div>
+    <div class="q-hint">Variables: tooth width, slot opening, magnet thickness/arc, turns. Objectives: efficiency, weight, cogging. Constraints: Tmax, demagnetization, fill factor. Algorithms: NSGA-II, Bayesian, DOE + surrogate model. Key: define meaningful bounds and constraints first.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">10</div>
   <div>
-    <div class="q-text">Describe the demagnetization risk assessment process. How do you ensure the operating point stays above the BH curve "knee" at max current and temperature?</div>
-    <div class="q-hint">FEA at worst case: max d-axis current + max temperature. Check H_load vs Hcj with safety factor (H_load &lt; 0.7&middot;Hcj). Account for temperature coefficients of Br (&minus;0.12%/&deg;C) and Hcj (&minus;0.6%/&deg;C).</div>
+    <div class="q-text">How do PWM harmonics from the inverter affect motor performance? What design and operational measures help mitigate additional losses?</div>
+    <div class="q-hint">PWM harmonics &rarr; additional iron losses (eddy currents in laminations and magnets), increased Cu AC losses (skin/proximity), audible noise, torque ripple. Mitigation: higher switching frequency, sinusoidal filters, thinner laminations, segmented magnets, Litz wire.</div>
   </div>
 </div>
 
 <!-- Category C -->
-<h2><span class="num">C</span> Design Process &amp; Methodology</h2>
+<h2><span class="num">C</span> Manufacturing, Testing &amp; Quality</h2>
 
 <div class="q-block">
   <div class="q-num">11</div>
   <div>
-    <div class="q-text">Design a 3 kW outrunner motor for a heavy-lift multicopter. Walk through your process from requirements to first prototype.</div>
-    <div class="q-hint">Steps: sizing (D&sup2;L from TRV), slot/pole selection, magnetic circuit, winding design, FEA verification, thermal check, mechanical design (bell, shaft, bearings), prototype fabrication, dyno testing.</div>
+    <div class="q-text">What criteria drive your lamination steel selection? How does operating frequency influence your choice of grade and thickness?</div>
+    <div class="q-hint">Criteria: saturation (Bsat), core loss at operating f, permeability, cost, availability. At f &gt; 400 Hz: need 0.2-0.35 mm (NO20, B20AV1200). At low f: M19 0.35-0.5 mm sufficient. P_eddy ~ f&sup2;&middot;t&sup2;. Also consider punching/laser cutting effects on loss.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">12</div>
   <div>
-    <div class="q-text">How do you model iron losses? Explain the difference between Steinmetz and Bertotti (three-term) models.</div>
-    <div class="q-hint">Steinmetz: P = k&middot;f^a&middot;B^b (empirical, single frequency). Bertotti: P = k_h&middot;f&middot;B&sup2; + k_e&middot;f&sup2;&middot;B&sup2; + k_a&middot;f^1.5&middot;B^1.5 (hysteresis + eddy + anomalous). Bertotti better for wide frequency range.</div>
+    <div class="q-text">Describe your quality control process for motor winding in production. What electrical tests do you perform and what tolerances are acceptable?</div>
+    <div class="q-hint">Tests: phase resistance (&pm;2%), inductance balance (&pm;5%), hi-pot/surge test (2&times; rated + 1000 V), insulation resistance (&gt;100 M&Omega;), back-EMF symmetry. Visual: end-winding clearance, slot fill uniformity. Thermal cycling after potting.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">13</div>
   <div>
-    <div class="q-text">Explain aspect ratio (L/D) trade-offs. When prefer pancake vs. elongated geometry?</div>
-    <div class="q-hint">Pancake: higher torque (T ~ D&sup2;&middot;L), lower inertia, fits UAV arms. Elongated: better cooling ratio, lower end-winding proportion. Drone motors: typically L/D = 0.2-0.5.</div>
+    <div class="q-text">You are commissioning a dynamometer test for a newly designed motor. Describe your complete test protocol from mechanical setup to performance characterization.</div>
+    <div class="q-hint">Setup: alignment, coupling, instrumentation (torque sensor, encoder, thermocouples, power analyzer). Tests: no-load back-EMF vs RPM, locked-rotor torque, R/L, efficiency map, thermal run at rated load, cogging torque. Compare all vs FEA predictions.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">14</div>
   <div>
-    <div class="q-text">How would you set up multi-objective optimization for an outrunner motor? Variables, objectives, constraints, algorithm?</div>
-    <div class="q-hint">Variables: tooth width, slot opening, magnet thickness/arc, turns. Objectives: efficiency, weight, cogging. Constraints: Tmax, demagnetization, fill factor. Algorithms: NSGA-II, Bayesian, DOE + surrogate model.</div>
+    <div class="q-text">Compare magnet retention methods for high-speed PM rotors: adhesive-only, Kevlar bandaging, carbon fiber sleeve, and metallic retention ring. Pros/cons of each?</div>
+    <div class="q-hint">Adhesive: simple, low cost, fails at high temp/RPM. Kevlar: good safety margin, low eddy losses. CF sleeve: strongest, but eddy current losses. Metallic ring: robust but increases effective air gap, adds weight, eddy losses. Choice depends on tip speed and temperature.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">15</div>
   <div>
-    <div class="q-text">Your 2D FEA predicts back-EMF but the prototype measures 12% lower. What are the possible causes?</div>
-    <div class="q-hint">Causes: magnet Br tolerance (&minus;5%), temperature derating, 3D end-effects (2D overestimates by 5-10%), stacking factor, air gap larger than nominal, magnet assembly errors, wrong BH curve data.</div>
+    <div class="q-text">What IEC and ISO standards are relevant for BLDC motor design, testing, and certification? How do you plan for compliance early in the design process?</div>
+    <div class="q-hint">IEC 60034 (rotating machines), IEC 60085 (insulation class), IEC 60529 (IP rating), ISO 10816 (vibration), IEC 61800 (VSD). Plan: define insulation class early, thermal model against rating, EMC considerations, documentation trail for certification.</div>
   </div>
 </div>
 
 <!-- Category D -->
-<h2><span class="num">D</span> Thermal &amp; Mechanical</h2>
+<h2><span class="num">D</span> Thermal Management &amp; Reliability</h2>
 
 <div class="q-block">
   <div class="q-num">16</div>
   <div>
-    <div class="q-text">What are the dominant cooling mechanisms in a drone outrunner motor at hover? LPTN or CFD — when to use which?</div>
-    <div class="q-hint">Prop-wash forced convection on rotating bell (h = 20-50 W/m&sup2;K). Conduction via stator teeth to housing. LPTN for early design (fast), CFD for detailed analysis. Radiation negligible.</div>
+    <div class="q-text">What are the dominant cooling mechanisms in a drone outrunner motor during hover? When would you use an LPTN model versus CFD?</div>
+    <div class="q-hint">Prop-wash forced convection on bell (h = 20-50 W/m&sup2;K). Conduction via stator teeth to housing. LPTN: fast, early design. CFD: detailed, for optimization. Radiation negligible. Key: Cu losses in slots, Fe losses in teeth.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">17</div>
   <div>
-    <div class="q-text">Winding reaches 155&deg;C instead of 130&deg;C target at continuous operation. OD is fixed. What 3 changes would you prioritize?</div>
-    <div class="q-hint">1) Increase fill factor (VPI potting). 2) Better lamination steel (lower iron losses). 3) Optimize winding (fewer turns + higher voltage = lower I&sup2;R). 4) Ventilation holes in bell. 5) Upgrade slot liner thermal conductivity.</div>
+    <div class="q-text">Your motor&rsquo;s winding reaches 155&deg;C instead of the 130&deg;C target at continuous operation. Outer diameter is fixed. What 3 changes would you prioritize and why?</div>
+    <div class="q-hint">1) Increase fill factor (VPI potting improves thermal conductivity). 2) Better lamination steel (lower iron losses). 3) Optimize winding (fewer turns + higher voltage = lower I&sup2;R). 4) Ventilation holes in bell. 5) Upgrade slot liner thermal conductivity.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">18</div>
   <div>
-    <div class="q-text">Bearing selection criteria for an outrunner drone motor. How to calculate L10h?</div>
-    <div class="q-hint">L10h = (C/P)^3 &middot; 10&sup6;/(60&middot;n). Factors: radial load, axial load, RPM, preload, sealing (2RS for IP55), ABEC class. Typical drone target: &gt;1000 h at hover.</div>
+    <div class="q-text">Describe bearing selection criteria for an outrunner motor. How do you calculate L10h life, and what are typical design targets for UAV applications?</div>
+    <div class="q-hint">L10h = (C/P)^3 &middot; 10&sup6;/(60&middot;n). Factors: radial/axial load, RPM, preload, sealing (2RS for IP55), ABEC class. Typical target: &gt;1000 h at hover RPM. Consider contamination factor for agricultural environment.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">19</div>
   <div>
-    <div class="q-text">Magnet retention in an outrunner motor: compare bandaging (Kevlar/CF) vs adhesive-only at high RPM.</div>
-    <div class="q-hint">Centrifugal force F = m&middot;&omega;&sup2;&middot;r. Adhesive alone fails above certain RPM/temperature. Kevlar bandage adds safety margin. Carbon fiber: stronger but causes eddy current losses in magnets. Retention sleeve: safest but increases effective air gap.</div>
+    <div class="q-text">How would you achieve IP55 protection in an outrunner BLDC motor without excessive weight gain or thermal penalty?</div>
+    <div class="q-hint">Labyrinth seal at shaft/bell, epoxy potting (VPI), sealed bearings (2RS), bell skirt overlap, baffled vents. Trade-off: sealed = hotter, heavier. VPI helps both thermal conductivity and sealing simultaneously.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">20</div>
   <div>
-    <div class="q-text">How to achieve IP55 in an outrunner BLDC without excessive weight or thermal penalty?</div>
-    <div class="q-hint">Labyrinth seal at shaft/bell interface, epoxy potting of windings, sealed bearings (2RS), bell skirt overlap, vent holes with baffles. Trade-off: sealed = hotter, heavier.</div>
+    <div class="q-text">Excessive vibration is reported in a production batch of motors that individually passed bench testing. Describe your systematic diagnostic approach.</div>
+    <div class="q-hint">Rotor imbalance (most common), bearing defect, eccentricity, magnet delamination, resonance at operating RPM. Diagnostic: FFT vibration analysis, compare spectrum to healthy unit, check mechanical runout, bearing signature analysis.</div>
   </div>
 </div>
 
 <!-- Category E -->
-<h2><span class="num">E</span> Practical Experience</h2>
+<h2><span class="num">E</span> System Integration &amp; Problem Solving</h2>
 
 <div class="q-block">
   <div class="q-num">21</div>
   <div>
-    <div class="q-text">Describe a motor project with significant trade-offs. What were the competing requirements and how did you decide?</div>
-    <div class="q-hint">Open-ended. Look for: structured decision process, quantitative trade-off analysis, stakeholder alignment, prototype validation.</div>
+    <div class="q-text">Describe a motor project where you faced significant trade-offs between competing requirements. What were the constraints and how did you make the final decision?</div>
+    <div class="q-hint">Open-ended. Look for: structured decision process, quantitative trade-off analysis (not just intuition), stakeholder alignment, validation through prototype or simulation.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">22</div>
   <div>
-    <div class="q-text">How do you validate FEA against a prototype? What tests, what tolerances are acceptable?</div>
-    <div class="q-hint">Back-EMF vs RPM (&lt;5%), locked-rotor torque, R/L (LCR meter), thermal run (thermocouples), cogging torque (torque sensor at low RPM), efficiency on dyno. Acceptable: &lt;5% torque, &lt;3% EMF.</div>
+    <div class="q-text">How do you validate your FEA model against a physical prototype? What measurements, tolerances, and acceptance criteria do you use?</div>
+    <div class="q-hint">Compare: back-EMF vs RPM (&lt;5%), locked-rotor torque, phase R and L, thermal run with thermocouples, cogging torque, efficiency on dyno. Acceptable: &lt;5% torque, &lt;3% EMF, &lt;10% thermal prediction.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">23</div>
   <div>
-    <div class="q-text">Excessive vibration reported in a batch of 50 motors that passed bench tests. Diagnostic approach?</div>
-    <div class="q-hint">Rotor imbalance (most common), bearing defect, eccentricity, magnet delamination, resonance at operating RPM. Diagnostic: FFT vibration analysis, compare spectrum to healthy unit, check mechanical runout.</div>
+    <div class="q-text">A customer&rsquo;s motor fleet shows increasing failure rate after 6 months in field. Motors passed all factory tests. Walk through your failure investigation from symptom to root cause.</div>
+    <div class="q-hint">Data collection: failure mode (open/short circuit, bearing, demagnetization), field conditions. Analysis: disassemble failed units, compare with pristine. Common: insulation breakdown from thermal cycling, bearing contamination, magnet degradation. Corrective action plan.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">24</div>
   <div>
-    <div class="q-text">Customer wants cogging torque reduced 3x without changing outer envelope or magnet grade. Options?</div>
-    <div class="q-hint">Magnet arc shaping (~&minus;50% cogging, ~&minus;1% torque), stator skew 1 slot pitch (~&minus;90% cogging, &minus;3% Kw), slot opening optimization (~&minus;30%, no torque loss). Combination can achieve &gt;3x reduction.</div>
+    <div class="q-text">A customer requests 3&times; reduction in torque ripple without changing the motor&rsquo;s outer envelope or magnet grade. What approaches would you consider?</div>
+    <div class="q-hint">Magnet arc shaping (~&minus;50% cogging, ~&minus;1% torque), stator skew 1 slot pitch (~&minus;90% cogging, &minus;3% Kw), slot opening optimization (~&minus;30%, no torque loss), control-based compensation. Combination can achieve &gt;3&times; reduction.</div>
   </div>
 </div>
 
 <div class="q-block">
   <div class="q-num">25</div>
   <div>
-    <div class="q-text">What FEA/design tools have you used? Compare two you're most experienced with.</div>
-    <div class="q-hint">MotorCAD: fast multiphysics, template-based, design space exploration. Maxwell: detailed 2D/3D FEA, flexible geometry. JMAG: full optimization loop. FEMM: free, good for quick validation. Look for depth, not just tool names.</div>
+    <div class="q-text">What motor design and simulation tools have you used? Compare two you&rsquo;re most experienced with &mdash; strengths, limitations, and ideal use cases.</div>
+    <div class="q-hint">MotorCAD: fast multiphysics, template-based, great for design-space exploration. Maxwell: detailed 2D/3D FEA, flexible geometry. JMAG: full optimization loop, production-ready. FEMM: free, good for quick validation. Look for depth of experience, not just tool names.</div>
   </div>
 </div>
 
@@ -919,10 +918,11 @@ li { margin-bottom: 5px; }
 
 <div class="card">
   <div class="card-header">Evaluation Guide</div>
-  <p><strong>Q1-10</strong> &mdash; Fundamental knowledge (must answer correctly at senior level)</p>
-  <p><strong>Q11-15</strong> &mdash; Design methodology (differentiates mid from senior)</p>
-  <p><strong>Q16-20</strong> &mdash; Thermal/mechanical (cross-domain knowledge)</p>
-  <p><strong>Q21-25</strong> &mdash; Practical experience (separates theory from real expertise)</p>
+  <p><strong>Q1-5</strong> &mdash; EM theory (must answer correctly at senior level)</p>
+  <p><strong>Q6-10</strong> &mdash; FEA methodology (separates theorists from practitioners)</p>
+  <p><strong>Q11-15</strong> &mdash; Manufacturing &amp; testing (production awareness)</p>
+  <p><strong>Q16-20</strong> &mdash; Thermal &amp; reliability (cross-domain knowledge)</p>
+  <p><strong>Q21-25</strong> &mdash; Problem solving &amp; experience (real-world expertise)</p>
 </div>
 
 </div>
@@ -962,6 +962,11 @@ li { margin-bottom: 5px; }
   <tr><td>Peak current (180 s)</td><td class="spec-value">&le; 70 A</td><td>ESC peak rating</td></tr>
   <tr><td>Motor outer diameter</td><td class="spec-value">&le; 92 mm</td><td>Arm tube clearance</td></tr>
   <tr><td>Motor weight</td><td class="spec-value">&le; 700 g</td><td>Including leads</td></tr>
+  <tr><td>MTOW (vehicle)</td><td class="spec-value">&le; 35 kg</td><td>Total takeoff mass</td></tr>
+  <tr><td>Payload capacity</td><td>10-15 kg</td><td>Agricultural spray / cargo</td></tr>
+  <tr><td>Shaft diameter</td><td class="spec-value">12-16 mm</td><td>Standard prop adapter</td></tr>
+  <tr><td>Axial height</td><td class="spec-value">&le; 50 mm</td><td>Arm profile constraint</td></tr>
+  <tr><td>Winding temp (continuous)</td><td class="spec-value">&le; 150&deg;C</td><td>Class F insulation limit</td></tr>
   <tr><td>Ambient temperature</td><td>&minus;10&deg;C to +45&deg;C</td><td>Agricultural environments</td></tr>
   <tr><td>Ingress protection</td><td>IP55 minimum</td><td>Dust + water jets</td></tr>
   <tr><td>Service life</td><td>&ge; 1000 hours</td><td>Before bearing replacement</td></tr>
@@ -1068,9 +1073,13 @@ li { margin-bottom: 5px; }
   <div class="table-wrap">
   <table>
     <tr><th>Propeller</th><th>Thrust (kg)</th><th>RPM</th><th>Torque (Nm)</th><th>Power (W)</th></tr>
+    <tr><td>30&times;10.5" CF</td><td>2.5</td><td>1550</td><td>0.9</td><td>150</td></tr>
     <tr><td>30&times;10.5" CF</td><td>3.8</td><td>2000</td><td>1.7</td><td>360</td></tr>
+    <tr><td>30&times;10.5" CF</td><td>6.2</td><td>2540</td><td>2.6</td><td>690</td></tr>
     <tr><td>30&times;10.5" CF</td><td>8.5</td><td>2930</td><td>3.5</td><td>1090</td></tr>
+    <tr><td>30&times;10.5" CF</td><td>10.8</td><td>3240</td><td>4.5</td><td>1520</td></tr>
     <tr><td>30&times;10.5" CF</td><td>13.7</td><td>3680</td><td>5.8</td><td>2220</td></tr>
+    <tr><td>30&times;10.5" CF</td><td>16.0</td><td>3980</td><td>6.9</td><td>2870</td></tr>
     <tr><td>30&times;10.5" CF</td><td>18.3</td><td>4210</td><td>7.9</td><td>3500</td></tr>
   </table>
   </div>
@@ -1118,11 +1127,11 @@ L10h = (C/P)^3 &middot; 10&sup6; / (60&middot;n)       [hours, bearing life]</di
 <div class="table-wrap">
 <table>
   <tr><th data-i18n="th_category">Category</th><th data-i18n="th_questions">Questions</th><th data-i18n="th_max_pts">Max Points</th><th data-i18n="th_min_senior">Min for Senior</th></tr>
-  <tr><td data-i18n="sc_em_fund">EM Fundamentals</td><td>1-5</td><td>25</td><td>20</td></tr>
-  <tr><td data-i18n="sc_materials">Materials &amp; Components</td><td>6-10</td><td>25</td><td>18</td></tr>
-  <tr><td data-i18n="sc_methodology">Design Methodology</td><td>11-15</td><td>20</td><td>14</td></tr>
-  <tr><td data-i18n="sc_thermal">Thermal &amp; Mechanical</td><td>16-20</td><td>15</td><td>10</td></tr>
-  <tr><td data-i18n="sc_practical">Practical Experience</td><td>21-25</td><td>15</td><td>10</td></tr>
+  <tr><td data-i18n="sc_em_fund">EM Theory &amp; Fundamentals</td><td>1-5</td><td>20</td><td>16</td></tr>
+  <tr><td data-i18n="sc_fea">FEA &amp; Simulation</td><td>6-10</td><td>20</td><td>14</td></tr>
+  <tr><td data-i18n="sc_mfg">Manufacturing, Testing &amp; QC</td><td>11-15</td><td>20</td><td>14</td></tr>
+  <tr><td data-i18n="sc_thermal">Thermal &amp; Reliability</td><td>16-20</td><td>20</td><td>14</td></tr>
+  <tr><td data-i18n="sc_practical">System Integration &amp; Problem Solving</td><td>21-25</td><td>20</td><td>14</td></tr>
   <tr><td><strong data-i18n="sc_total">Total</strong></td><td></td><td><strong>100</strong></td><td><strong>72</strong></td></tr>
 </table>
 </div>
@@ -1171,6 +1180,8 @@ L10h = (C/P)^3 &middot; 10&sup6; / (60&middot;n)       [hours, bearing life]</di
     <tr><td>Magnet grade</td><td>N42SH or N45SH</td><td>N42SH (cost/perf optimal)</td></tr>
     <tr><td>Lamination</td><td>M19 / 35H300</td><td>0.2-0.35 mm NO grade</td></tr>
     <tr><td>Winding temp (hover)</td><td>&lt; 140&deg;C</td><td>&lt; 120&deg;C</td></tr>
+    <tr><td>Axial height</td><td>&le; 50 mm</td><td>&le; 45 mm</td></tr>
+    <tr><td>Shaft diameter</td><td>12-16 mm</td><td>14 mm (M14 standard)</td></tr>
   </table>
   </div>
 </div>
@@ -1189,6 +1200,8 @@ L10h = (C/P)^3 &middot; 10&sup6; / (60&middot;n)       [hours, bearing life]</di
     <li data-i18n="rf_8">Copy-pasted motor design without customization</li>
     <li data-i18n="rf_9">FEA without mesh convergence study</li>
     <li data-i18n="rf_10">Claims &gt;95% efficiency for this motor class</li>
+    <li data-i18n="rf_11">Selects inrunner topology for direct-drive propulsion without discussing gear reduction</li>
+    <li data-i18n="rf_12">Uses integer-slot winding (e.g. 12s8p, 24s16p) without discussing harmonic penalties</li>
   </ul>
 </div>
 
@@ -1234,69 +1247,70 @@ const i18n = {
     show_hints: 'Показати підказки',
     hide_hints: 'Сховати підказки',
     // Interview categories
-    cat_a: 'Електромагнітні основи',
-    cat_b: 'Матеріали та компоненти',
-    cat_c: 'Процес проєктування та методологія',
-    cat_d: 'Термічні та механічні аспекти',
-    cat_e: 'Практичний досвід',
+    cat_a: 'Теорія ЕМ та основи',
+    cat_b: 'FEA та моделювання',
+    cat_c: 'Виробництво, випробування та якість',
+    cat_d: 'Термічне керування та надійність',
+    cat_e: 'Системна інтеграція та вирішення задач',
     // Questions
-    q1: 'Поясніть різницю між SPM (Surface Permanent Magnet) та IPM (Interior PM) топологіями. Коли б ви обрали одну замість іншої для тягового двигуна БПЛА?',
+    q1: 'Поясніть різницю між SPM (Surface Permanent Magnet) та IPM (Interior PM) топологіями. Коли б ви обрали одну замість іншої для прямоприводного застосування?',
     q2: 'Виведіть залежність між KV (об/хв/В) та Kt (Нм/А). Чому Ke = Kt у системі СІ для синусоїдальної PMSM?',
-    q3: 'Для двигуна 36 пазів / 42 полюси з зосередженою обмоткою: розрахуйте обмотковий коефіцієнт. Чому ця конфігурація популярна для аутраннер-двигунів дронів?',
-    q4: 'Як когінг-момент залежить від НСК (найменше спільне кратне) пазів і полюсів? Назвіть 3 методи його зменшення без зміни конфігурації пазів/полюсів.',
-    q5: 'Поясніть зону послаблення поля. Що визначає максимальну швидкість? Що таке "характеристичний струм" і чому він важливий?',
-    q6: 'Порівняйте марки магнітів N42SH, N45UH та N52. Яку б ви обрали для сільськогосподарського дрона при температурі оточення 40°C та температурі обмотки 130°C? Обґрунтуйте.',
-    q7: 'Двигун з 21 парою полюсів на 4000 об/хв має електричну частоту ~1400 Гц. Як це впливає на вибір матеріалу та товщини ламінацій?',
-    q8: 'Коли зосереджена обмотка краща за розподілену? Які компроміси щодо гармонік, когінгу та втрат у міді?',
-    q9: 'Які фактори визначають оптимальну довжину повітряного зазору в аутраннер-двигуні? Що станеться, якщо він занадто малий або великий?',
-    q10: 'Опишіть процес оцінки ризику розмагнічування. Як забезпечити, щоб робоча точка залишалась вище "коліна" кривої BH при максимальному струмі та температурі?',
-    q11: 'Спроєктуйте аутраннер-двигун 3 кВт для важкого мультикоптера. Опишіть весь процес від вимог до першого прототипу.',
-    q12: 'Як ви моделюєте втрати в сталі? Поясніть різницю між моделями Стейнмеця та Бертотті (трикомпонентна).',
-    q13: 'Поясніть компроміси співвідношення L/D. Коли краще "млинець" vs подовжена геометрія?',
-    q14: 'Як би ви організували багатокритеріальну оптимізацію аутраннер-двигуна? Змінні, цілі, обмеження, алгоритм?',
-    q15: 'Ваша 2D FEA прогнозує ЕРС, але прототип показує на 12% менше. Які можливі причини?',
-    q16: 'Які домінуючі механізми охолодження аутраннер-двигуна дрона при зависанні? LPTN чи CFD — коли що використовувати?',
-    q17: 'Обмотка досягає 155°C замість цільових 130°C при безперервній роботі. OD зафіксовано. Які 3 зміни ви б пріоритизували?',
-    q18: 'Критерії вибору підшипників для аутраннер-двигуна дрона. Як розрахувати L10h?',
-    q19: 'Утримання магнітів в аутраннер-двигуні: порівняйте бандажування (кевлар/CF) з клеєм на високих обертах.',
-    q20: 'Як досягти IP55 в аутраннер BLDC без значного збільшення маси чи погіршення теплового режиму?',
-    q21: 'Опишіть проєкт двигуна зі значними компромісами. Які конкуруючі вимоги та як ви вирішили?',
-    q22: 'Як ви валідуєте FEA з прототипом? Які тести, які допуски прийнятні?',
-    q23: 'Надмірна вібрація в партії 50 двигунів, що пройшли стендові випробування. Ваш діагностичний підхід?',
-    q24: 'Замовник хоче зменшити когінг-момент в 3 рази без зміни габаритів чи марки магнітів. Варіанти?',
-    q25: 'Які FEA/design інструменти ви використовували? Порівняйте два, з якими маєте найбільший досвід.',
-    // Hints (same keys with _hint suffix)
-    h1: 'Шукаємо: реактивний момент в IPM, коефіцієнт салієнтності Ld/Lq, здатність до послаблення поля, складність виробництва. SPM переважний для аутраннер дронів.',
+    q3: 'Поясніть концепцію обмоткового коефіцієнта для дробово-пазових машин із зосередженою обмоткою (FSCW). Як поєднуються коефіцієнти кроку та розподілу, і чому FSCW домінують у низькошвидкісних високомоментних застосуваннях?',
+    q4: 'Як когінг-момент залежить від НСК (найменше спільне кратне) пазів і полюсів? Назвіть 3 методи його зменшення без зміни комбінації пазів/полюсів.',
+    q5: 'Поясніть зону послаблення поля для PMSM. Що визначає максимальну швидкість? Що таке «характеристичний струм» і чому він критичний для діапазону постійної потужності?',
+    q6: 'Як ви моделюєте втрати в сталі двигуна при високій електричній частоті? Порівняйте класичне рівняння Стейнмеця з трикомпонентною моделлю Бертотті.',
+    q7: 'Коли 3D FEA необхідний, а коли достатньо 2D? Наведіть конкретні приклади, де 2D давав би хибні результати.',
+    q8: 'Ваш 2D FEA прогнозує сталу ЕРС, але прототип показує на 12% менше. Систематично перелічіть усі можливі причини та як ви б діагностували кожну.',
+    q9: 'Як ви організовуєте багатокритеріальну оптимізацію двигуна? Опишіть вибір змінних, цільових функцій, обмежень та алгоритму.',
+    q10: 'Як ШІМ-гармоніки інвертора впливають на характеристики двигуна? Які конструктивні та експлуатаційні заходи допомагають зменшити додаткові втрати?',
+    q11: 'Які критерії визначають вибір електротехнічної сталі для ламінацій? Як робоча частота впливає на вибір марки та товщини?',
+    q12: 'Опишіть процес контролю якості обмотки двигуна у виробництві. Які електричні тести ви проводите і які допуски прийнятні?',
+    q13: 'Ви запускаєте динамометричне випробування нового двигуна. Опишіть повний протокол від механічного монтажу до характеризації продуктивності.',
+    q14: 'Порівняйте методи утримання магнітів для високошвидкісних PM-роторів: лише клей, кевларовий бандаж, вуглецева гільза та металеве кільце. Плюси/мінуси кожного?',
+    q15: 'Які стандарти IEC та ISO актуальні для проєктування, випробування та сертифікації BLDC двигунів? Як ви плануєте відповідність на ранніх етапах?',
+    q16: 'Які домінуючі механізми охолодження аутраннер-двигуна дрона при зависанні? Коли LPTN, а коли CFD?',
+    q17: 'Обмотка двигуна досягає 155°C замість цільових 130°C при безперервній роботі. OD зафіксовано. Які 3 зміни ви б пріоритизували і чому?',
+    q18: 'Опишіть критерії вибору підшипників для аутраннер-двигуна. Як розрахувати ресурс L10h, і які типові цільові показники для БПЛА?',
+    q19: 'Як досягти захисту IP55 в аутраннер BLDC без надмірного збільшення маси чи погіршення теплового режиму?',
+    q20: 'Надмірна вібрація виявлена у виробничій партії двигунів, які пройшли стендові випробування. Опишіть ваш систематичний діагностичний підхід.',
+    q21: 'Опишіть проєкт двигуна зі значними компромісами між конкуруючими вимогами. Які обмеження і як ви прийняли фінальне рішення?',
+    q22: 'Як ви валідуєте FEA-модель з фізичним прототипом? Які вимірювання, допуски та критерії приймання?',
+    q23: 'Парк двигунів замовника показує зростання відмов через 6 місяців експлуатації. Всі двигуни пройшли заводські тести. Опишіть дослідження від симптому до першопричини.',
+    q24: 'Замовник просить зменшити пульсації моменту в 3 рази без зміни габаритів чи марки магнітів. Які підходи ви б розглянули?',
+    q25: 'Які інструменти проєктування та моделювання двигунів ви використовували? Порівняйте два, з якими маєте найбільший досвід — сильні сторони, обмеження, ідеальні сценарії.',
+    // Hints
+    h1: 'Шукаємо: реактивний момент в IPM, коефіцієнт салієнтності Ld/Lq, здатність до послаблення поля, складність виробництва. SPM переважний для низькошвидкісного прямого приводу.',
     h2: 'Kt = 60/(2π·KV) ≈ 9.55/KV для фази, або ≈ 8.27/KV лінія-лінія. Збереження енергії: P = T·ω = E·I, тому Kt = Ke.',
-    h3: 'Kw = 0.933 (q = 2/7). Високий НСК = 252 зменшує когінг. Симетрія = 6 зменшує радіальні сили. Короткі лобові частини.',
-    h4: 'Вищий НСК = менша амплітуда. Методи: формування дуги магніту, скос (1 пазовий крок), оптимізація розкриття паза, хибні пази, фаски на магнітах.',
-    h5: 'I_char = λ_m / Ld. Коли I_char = I_rated → нескінченний CPSR. SPM має обмежений діапазон послаблення через низький Ld.',
-    h6: 'N42SH: Br = 1.30T, Tmax = 150°C, хороший запас. N52: Br = 1.45T але Tmax = 80°C — розмагнітиться. N42SH — оптимальний вибір.',
-    h7: 'При f > 400 Гц домінують втрати на вихрові струми. P_eddy ~ f²·t². Потрібні ламінації 0.2-0.35 мм. M19 мінімум. B20AV1200 переважно.',
-    h8: 'Зосереджена: короткі лобові частини (менші втрати Cu, легша). Недоліки: вищі просторові гармоніки → більші втрати у магнітах.',
-    h9: 'Фактори: механічний зазор, бандаж магнітів, виробничі допуски. Занадто малий: ризик складання, вищий когінг. Занадто великий: менше B_gap, менша густина моменту.',
-    h10: 'FEA при найгіршому випадку: макс d-осьовий струм + макс температура. H_load < 0.7·Hcj. Температурні коефіцієнти Br (−0.12%/°C) та Hcj (−0.6%/°C).',
-    h11: 'Кроки: sizing (D²L з TRV), вибір пазів/полюсів, магнітне коло, обмотка, FEA, термоперевірка, механіка (дзвін, вал, підшипники), прототип, випробування.',
-    h12: 'Стейнмец: P = k·f^a·B^b (емпіричний). Бертотті: P = k_h·f·B² + k_e·f²·B² + k_a·f^1.5·B^1.5 (гістерезис + вихрові + аномальні). Бертотті кращий для широкого діапазону.',
-    h13: 'Млинець: вищий момент (T ~ D²·L), менша інерція, підходить для рам БПЛА. Подовжений: краще охолодження, менша частка лобових. Дрони: L/D = 0.2-0.5.',
-    h14: 'Змінні: ширина зубця, розкриття паза, товщина/дуга магніту, витки. Цілі: ККД, маса, когінг. Обмеження: Tmax, розмагнічування, fill factor. Алгоритми: NSGA-II, Bayesian.',
-    h15: 'Причини: допуск Br магніту (−5%), температурна деградація, 3D ефекти кінців (2D завищує на 5-10%), коефіцієнт укладки, зазор більше номінального, помилки складання.',
-    h16: 'Примусова конвекція від пропелера (h = 20-50 Вт/м²К). Теплопровідність через зубці статора. LPTN для раннього проєктування, CFD для детального. Випромінювання нехтуємо.',
-    h17: '1) Збільшити fill factor (VPI заливка). 2) Краща сталь (менші втрати). 3) Оптимізація обмотки (менше витків + вища напруга = менше I²R). 4) Вентиляційні отвори.',
-    h18: 'L10h = (C/P)^3 · 10⁶/(60·n). Фактори: радіальне/осьове навантаження, оберти, преднатяг, ущільнення (2RS для IP55), клас ABEC. Ціль: >1000 год.',
-    h19: 'Відцентрова сила F = m·ω²·r. Клей сам не тримає на високих обертах/температурі. Кевлар додає запас. Карбон: міцніший але викликає вихрові втрати в магнітах.',
-    h20: 'Лабіринтне ущільнення вал/дзвін, заливка обмоток епоксидом, герметичні підшипники (2RS), перекриття юбкою дзвону, вентотвори з перегородками. Компроміс: герметичніше = гарячіше.',
-    h21: 'Відкрите питання. Шукаємо: структурований процес прийняття рішень, кількісний аналіз компромісів, узгодження зі стейкхолдерами, валідація прототипом.',
-    h22: 'ЕРС vs оберти (<5%), заблокований момент, R/L (LCR), термопрогін (термопари), когінг (датчик моменту), ефективність на стенді. Прийнятно: <5% момент, <3% ЕРС.',
-    h23: 'Дисбаланс ротора (найчастіше), дефект підшипника, ексцентриситет, відшарування магніту, резонанс на робочих обертах. Діагностика: FFT вібрацій, порівняння спектру.',
-    h24: 'Формування дуги магніту (~−50% когінгу, ~−1% моменту), скос статора на 1 крок (~−90% когінгу, −3% Kw), оптимізація розкриття паза (~−30%, без втрати моменту).',
-    h25: 'MotorCAD: швидкий мультифізичний, шаблонний. Maxwell: детальний 2D/3D FEA. JMAG: повний цикл оптимізації. FEMM: безкоштовний, для швидкої валідації.',
+    h3: 'Kw = Kp × Kd. FSCW: короткі лобові частини → легша, менші втрати Cu. Високий НСК зменшує когінг. Компроміс: вищі просторові гармоніки → вихрові втрати в магнітах. Типовий Kw = 0.86-0.95.',
+    h4: 'Вищий НСК = менша амплітуда когінгу. Методи: формування дуги магніту, скос (1 пазовий крок), оптимізація розкриття паза, хибні пази, фаски.',
+    h5: 'I_char = λ_m / Ld. Коли I_char = I_rated → нескінченний CPSR. SPM має обмежений діапазон послаблення через низький Ld. Макс швидкість обмежена напругою шини vs ЕРС.',
+    h6: 'Стейнмец: P = k·f^a·B^b (емпіричний). Бертотті: P = k_h·f·B² + k_e·f²·B² + k_a·f^1.5·B^1.5. Бертотті кращий для широкого діапазону частот. При f > 400 Гц домінує вихровий компонент.',
+    h7: '3D необхідний для: осьових машин, індуктивності/втрат лобових частин, коротких пакетів (L/D < 0.3), 3D формування магнітів. 2D завищує на 5-10% для коротких машин. 2D достатній для довгих.',
+    h8: 'Причини: допуск Br магніту (−5%), температурна деградація, 3D ефекти кінців, коефіцієнт укладки, зазор більше номінального, зсув магнітів, хибні дані BH. Діагностика: вимір Br, перевірка зазорів.',
+    h9: 'Змінні: ширина зубця, розкриття паза, товщина/дуга магніту, витки. Цілі: ККД, маса, когінг. Обмеження: Tmax, розмагнічування, fill factor. Алгоритми: NSGA-II, Bayesian, DOE + сурогатна модель.',
+    h10: 'ШІМ-гармоніки → додаткові втрати в сталі (вихрові в ламінаціях і магнітах), AC-втрати в міді (скін/близькість), шум, пульсації моменту. Заходи: вища частота комутації, фільтри, тонші ламінації, Litz-дріт.',
+    h11: 'Критерії: насичення (Bsat), втрати при робочій f, проникність, ціна. При f > 400 Гц: 0.2-0.35 мм (NO20, B20AV1200). Низькі f: M19 0.35-0.5 мм. P_eddy ~ f²·t². Враховувати вплив штампування/різки.',
+    h12: 'Тести: опір фаз (±2%), баланс індуктивності (±5%), hi-pot/surge (2× + 1000 В), опір ізоляції (>100 МОм), симетрія ЕРС. Візуально: зазори лобових, рівномірність заповнення. Термоциклювання після заливки.',
+    h13: 'Монтаж: центрування, муфта, інструментування (датчик моменту, енкодер, термопари, аналізатор потужності). Тести: ЕРС vs оберти, заблокований момент, R/L, карта ефективності, термопрогін, когінг.',
+    h14: 'Клей: просто, дешево, відмовляє при високій T/обертах. Кевлар: запас, малі вихрові. CF: найміцніший, але вихрові. Металеве кільце: надійне, але збільшує зазор, масу, вихрові. Залежить від окружної швидкості.',
+    h15: 'IEC 60034 (обертові машини), IEC 60085 (клас ізоляції), IEC 60529 (IP), ISO 10816 (вібрація), IEC 61800 (ЧРП). Планування: клас ізоляції рано, теплова модель vs рейтинг, ЕМС, документація для сертифікації.',
+    h16: 'Примусова конвекція від пропелера (h = 20-50 Вт/м²К). Теплопровідність через зубці. LPTN: швидко, ранній етап. CFD: детально, оптимізація. Випромінювання нехтуємо. Ключ: Cu-втрати в пазах, Fe в зубцях.',
+    h17: '1) Збільшити fill factor (VPI покращує теплопровідність). 2) Краща сталь (менші Fe-втрати). 3) Оптимізація обмотки (менше витків + вища напруга = менше I²R). 4) Вентиляційні отвори. 5) Кращий теплопровідний лайнер.',
+    h18: 'L10h = (C/P)^3 · 10⁶/(60·n). Фактори: радіальне/осьове навантаження, оберти, преднатяг, ущільнення (2RS для IP55), клас ABEC. Ціль: >1000 год при обертах зависання. Враховувати забруднення для с/г.',
+    h19: 'Лабіринтне ущільнення вал/дзвін, заливка VPI, герметичні підшипники (2RS), юбка дзвону, вентотвори з перегородками. Компроміс: герметичніше = гарячіше. VPI одночасно покращує теплопровідність і герметизацію.',
+    h20: 'Дисбаланс ротора (найчастіше), дефект підшипника, ексцентриситет, відшарування магніту, резонанс на робочих обертах. Діагностика: FFT вібрацій, порівняння спектру зі здоровим зразком, перевірка биття, аналіз підшипника.',
+    h21: 'Відкрите питання. Шукаємо: структурований процес, кількісний аналіз компромісів (не лише інтуїція), узгодження зі стейкхолдерами, валідація прототипом або моделюванням.',
+    h22: 'Порівняти: ЕРС vs оберти (<5%), заблокований момент, R/L, термопрогін з термопарами, когінг, ефективність на динамометрі. Прийнятно: <5% момент, <3% ЕРС, <10% теплова.',
+    h23: 'Збір даних: режим відмови (обрив, КЗ, підшипник, розмагнічування), умови експлуатації. Аналіз: розбір відмовлених, порівняння з новими. Часто: пробій ізоляції від термоциклів, забруднення підшипників. План корективних дій.',
+    h24: 'Формування дуги магніту (~−50% когінг, ~−1% момент), скос статора (~−90% когінг, −3% Kw), оптимізація розкриття паза (~−30%, без втрат моменту), компенсація керуванням. Комбінація дає >3×.',
+    h25: 'MotorCAD: швидкий мультифізичний, шаблонний, для дослідження проєктного простору. Maxwell: детальний 2D/3D FEA, гнучка геометрія. JMAG: повний цикл оптимізації. FEMM: безкоштовний, швидка валідація. Шукаємо глибину досвіду.',
     // Interview eval
     eval_guide: 'Керівництво з оцінки',
-    eval_p1: '<strong>Q1-10</strong> — Фундаментальні знання (обов\'язкові для senior)',
-    eval_p2: '<strong>Q11-15</strong> — Методологія (відрізняє mid від senior)',
-    eval_p3: '<strong>Q16-20</strong> — Термічні/механічні (міждисциплінарні)',
-    eval_p4: '<strong>Q21-25</strong> — Практичний досвід (відрізняє теорію від реального досвіду)',
+    eval_p1: '<strong>Q1-5</strong> — Теорія ЕМ (обов\'язкові для senior)',
+    eval_p2: '<strong>Q6-10</strong> — Методологія FEA (відрізняє теоретиків від практиків)',
+    eval_p3: '<strong>Q11-15</strong> — Виробництво та випробування (виробнича обізнаність)',
+    eval_p4: '<strong>Q16-20</strong> — Термічні та надійність (міждисциплінарні)',
+    eval_p5: '<strong>Q21-25</strong> — Вирішення задач та досвід (реальна експертиза)',
     // Assignment page
     asgn_title: 'Проєктне завдання — Високомоментний аутраннер-двигун',
     asgn_subtitle: 'Домашнє завдання <span class="sep"></span> Орієнтовно: 6-8 годин <span class="sep"></span> Дедлайн: 5 робочих днів',
@@ -1381,8 +1395,8 @@ const i18n = {
     th_task: 'Задача', th_criteria: 'Критерії', th_points: 'Бали', th_criteria2: 'Критерії', th_points2: 'Бали',
     th_level: 'Рівень', th_interview: 'Співбесіда', th_assignment: 'Завдання', th_action: 'Дія',
     // Scoring table content
-    sc_em_fund: 'ЕМ основи', sc_materials: 'Матеріали та компоненти', sc_methodology: 'Методологія проєктування',
-    sc_thermal: 'Термічні та механічні', sc_practical: 'Практичний досвід', sc_total: 'Всього', sc_total2: 'Всього',
+    sc_em_fund: 'Теорія ЕМ та основи', sc_fea: 'FEA та моделювання', sc_mfg: 'Виробництво, випробування та ВК',
+    sc_thermal: 'Термічні та надійність', sc_practical: 'Системна інтеграція та вирішення задач', sc_total: 'Всього', sc_total2: 'Всього',
     sc_b_21: 'Правильна топологія, обґрунтування пазів/полюсів, вивід KV',
     sc_b_22: 'Точність магнітного кола, обмотка, якість FEA, ефективність',
     sc_b_23: 'Обґрунтований вибір матеріалів з даташитами, перевірка розмагнічування',
@@ -1405,6 +1419,8 @@ const i18n = {
     rf_8: 'Скопійований проєкт двигуна без адаптації',
     rf_9: 'FEA без дослідження збіжності сітки',
     rf_10: 'Заявляє >95% ККД для цього класу двигунів',
+    rf_11: 'Обирає інраннер для прямого приводу без обговорення редуктора',
+    rf_12: 'Використовує цілопазову обмотку (напр. 12п8п, 24п16п) без обговорення гармонік',
     // Decision matrix
     dm_strong: 'Сильний найм', dm_hire: 'Найм', dm_border: 'На межі', dm_no: 'Відмова',
     dm_offer: 'Зробити оферту', dm_offer2: 'Зробити оферту', dm_second: 'Повторна співбесіда', dm_decline: 'Відмовити',
@@ -1516,6 +1532,7 @@ function setLang(lang) {
     if (ps[1] && t.eval_p2) { if (!enContent._eval_p2) enContent._eval_p2 = ps[1].innerHTML; ps[1].innerHTML = t.eval_p2; }
     if (ps[2] && t.eval_p3) { if (!enContent._eval_p3) enContent._eval_p3 = ps[2].innerHTML; ps[2].innerHTML = t.eval_p3; }
     if (ps[3] && t.eval_p4) { if (!enContent._eval_p4) enContent._eval_p4 = ps[3].innerHTML; ps[3].innerHTML = t.eval_p4; }
+    if (ps[4] && t.eval_p5) { if (!enContent._eval_p5) enContent._eval_p5 = ps[4].innerHTML; ps[4].innerHTML = t.eval_p5; }
   }
 
   // Assignment + Scoring section elements (h2 with .num child need special handling)
@@ -1541,6 +1558,14 @@ function setLang(lang) {
   const modalUnlock = document.querySelector('.modal-actions .btn-primary');
   if (modalUnlock) modalUnlock.textContent = t.modal_unlock || 'Unlock';
 
+  // Hint button text
+  const hintBtn = document.getElementById('hint-btn');
+  if (hintBtn) {
+    const isActive = hintBtn.classList.contains('active');
+    const svg = hintBtn.querySelector('svg').outerHTML;
+    hintBtn.innerHTML = svg + ' ' + (isActive ? (t.hide_hints || 'Hide Answer Hints') : (t.show_hints || 'Show Answer Hints'));
+  }
+
   // Footer
   if (t.footer) document.querySelector('.footer').innerHTML = t.footer;
 }
@@ -1562,10 +1587,11 @@ function restoreQuestions() {
     if (ps[1] && enContent._eval_p2) ps[1].innerHTML = enContent._eval_p2;
     if (ps[2] && enContent._eval_p3) ps[2].innerHTML = enContent._eval_p3;
     if (ps[3] && enContent._eval_p4) ps[3].innerHTML = enContent._eval_p4;
+    if (ps[4] && enContent._eval_p5) ps[4].innerHTML = enContent._eval_p5;
   }
   // Restore category headers
   const catHeaders = document.querySelectorAll('#tab-interview h2');
-  const catEN = ['Electromagnetic Fundamentals','Materials & Component Selection','Design Process & Methodology','Thermal & Mechanical','Practical Experience'];
+  const catEN = ['Electromagnetic Theory & Fundamentals','FEA & Simulation Methodology','Manufacturing, Testing & Quality','Thermal Management & Reliability','System Integration & Problem Solving'];
   catHeaders.forEach((h, i) => {
     if (catEN[i]) {
       const num = h.querySelector('.num');
@@ -1682,6 +1708,10 @@ async function downloadPDF() {
     + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Peak current (180s)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 70 A</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">ESC peak rating</td></tr>'
     + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Motor OD</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 92 mm</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Arm clearance</td></tr>'
     + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Motor weight</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 700 g</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Including leads</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">MTOW (vehicle)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 35 kg</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Total takeoff mass</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Shaft diameter</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">12-16 mm</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Standard prop adapter</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Axial height</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 50 mm</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Arm profile</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Winding temp</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 150\u00b0C</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Class F limit</td></tr>'
     + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Ambient temp</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">\u221210\u00b0C to +45\u00b0C</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Agricultural</td></tr>'
     + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">IP rating</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">IP55 minimum</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Dust + water jets</td></tr>'
     + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Service life</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">\u2265 1000 hours</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Before bearing repl.</td></tr>'
@@ -1735,9 +1765,13 @@ async function downloadPDF() {
     + '<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin-bottom:12px;">'
     + '<div style="font-size:11px;font-weight:700;color:#111;margin-bottom:6px;">Propeller Performance (for motor sizing)</div>'
     + '<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:4px;"><tr><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Propeller</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Thrust (kg)</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">RPM</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Torque (Nm)</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Power (W)</th></tr>'
+    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1550</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">0.9</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">150</td></tr>'
     + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2000</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1.7</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">360</td></tr>'
+    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">6.2</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2540</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2.6</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">690</td></tr>'
     + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">8.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2930</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1090</td></tr>'
+    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">10.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3240</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">4.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1520</td></tr>'
     + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">13.7</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3680</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">5.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2220</td></tr>'
+    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">16.0</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3980</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">6.9</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2870</td></tr>'
     + '<tr><td style="padding:5px 10px;">30\u00d710.5" CF</td><td style="padding:5px 10px;">18.3</td><td style="padding:5px 10px;">4210</td><td style="padding:5px 10px;">7.9</td><td style="padding:5px 10px;">3500</td></tr>'
     + '</table></div>'
 
@@ -1758,21 +1792,11 @@ async function downloadPDF() {
   // Wait for rendering
   await new Promise(r => setTimeout(r, 500));
 
+  const langBtns = document.querySelectorAll('.lang-btn');
+  langBtns.forEach(b => b.disabled = true);
+
   try {
-    const canvas = await html2canvas(container, {
-      scale: 2,
-      backgroundColor: '#ffffff',
-      useCORS: true,
-      logging: false,
-      width: 720,
-      windowWidth: 720
-    });
-
-    const imgData = canvas.toDataURL('image/jpeg', 0.95);
-    const { jsPDF } = window.jspdf || {};
-
-    // Use jsPDF from html2pdf bundle
-    const pdf = html2pdf().set({
+    await html2pdf().set({
       margin: [8, 8, 8, 8],
       filename: 'OMD-Systems-Motor-Design-Assignment.pdf',
       image: { type: 'jpeg', quality: 0.95 },
@@ -1786,18 +1810,17 @@ async function downloadPDF() {
       },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
       pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-    });
-
-    await pdf.from(container).save();
+    }).from(container).save();
   } catch(e) {
     console.error('PDF generation error:', e);
     alert('PDF error: ' + e.message + '\n\nUse Ctrl+P (Print) as fallback.');
+  } finally {
+    document.body.removeChild(container);
+    style.remove();
+    btn.innerHTML = origHTML;
+    btn.disabled = false;
+    langBtns.forEach(b => b.disabled = false);
   }
-
-  document.body.removeChild(container);
-  style.remove();
-  btn.innerHTML = origHTML;
-  btn.disabled = false;
 }
 </script>
 
