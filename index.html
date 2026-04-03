@@ -954,19 +954,19 @@ li { margin-bottom: 5px; }
 <table>
   <tr><th>Parameter</th><th>Requirement</th><th>Notes</th></tr>
   <tr><td>Application</td><td>Heavy-lift multicopter (6-8 motors)</td><td>Agricultural / cargo delivery</td></tr>
-  <tr><td>Propeller</td><td>29-32 inch carbon fiber, fixed-pitch</td><td>Folding type</td></tr>
-  <tr><td>Thrust per motor (max)</td><td class="spec-value">&ge; 16 kg</td><td>Sea level, ISA conditions</td></tr>
-  <tr><td>Thrust per motor (hover)</td><td class="spec-value">6-8 kg</td><td>~50% throttle</td></tr>
-  <tr><td>DC bus voltage</td><td class="spec-value">6S-12S LiPo (22.2-50.4 V)</td><td>Nominal 12S = 44.4 V</td></tr>
-  <tr><td>Continuous current</td><td class="spec-value">&le; 40 A</td><td>ESC thermal limit</td></tr>
-  <tr><td>Peak current (180 s)</td><td class="spec-value">&le; 70 A</td><td>ESC peak rating</td></tr>
-  <tr><td>Motor outer diameter</td><td class="spec-value">&le; 92 mm</td><td>Arm tube clearance</td></tr>
-  <tr><td>Motor weight</td><td class="spec-value">&le; 700 g</td><td>Including leads</td></tr>
-  <tr><td>MTOW (vehicle)</td><td class="spec-value">&le; 35 kg</td><td>Total takeoff mass</td></tr>
-  <tr><td>Payload capacity</td><td>10-15 kg</td><td>Agricultural spray / cargo</td></tr>
-  <tr><td>Shaft diameter</td><td class="spec-value">12-16 mm</td><td>Standard prop adapter</td></tr>
-  <tr><td>Axial height</td><td class="spec-value">&le; 50 mm</td><td>Arm profile constraint</td></tr>
-  <tr><td>Winding temp (continuous)</td><td class="spec-value">&le; 150&deg;C</td><td>Class F insulation limit</td></tr>
+  <tr><td>Propeller</td><td>30-34 inch carbon fiber, fixed-pitch</td><td>Folding type</td></tr>
+  <tr><td>Thrust per motor (max)</td><td class="spec-value">&ge; 18 kg</td><td>Sea level, ISA conditions</td></tr>
+  <tr><td>Thrust per motor (hover)</td><td class="spec-value">7-10 kg</td><td>~50% throttle</td></tr>
+  <tr><td>DC bus voltage</td><td class="spec-value">6S-14S LiPo (22.2-58.8 V)</td><td>Nominal 12S = 44.4 V</td></tr>
+  <tr><td>Continuous current</td><td class="spec-value">&le; 45 A</td><td>ESC thermal limit</td></tr>
+  <tr><td>Peak current (120 s)</td><td class="spec-value">&le; 75 A</td><td>ESC peak rating</td></tr>
+  <tr><td>Motor outer diameter</td><td class="spec-value">&le; 95 mm</td><td>Arm tube clearance</td></tr>
+  <tr><td>Motor weight</td><td class="spec-value">&le; 750 g</td><td>Including leads</td></tr>
+  <tr><td>MTOW (vehicle)</td><td class="spec-value">&le; 40 kg</td><td>Total takeoff mass</td></tr>
+  <tr><td>Payload capacity</td><td>12-18 kg</td><td>Agricultural spray / cargo</td></tr>
+  <tr><td>Shaft diameter</td><td class="spec-value">12-18 mm</td><td>Standard prop adapter</td></tr>
+  <tr><td>Axial height</td><td class="spec-value">&le; 55 mm</td><td>Arm profile constraint</td></tr>
+  <tr><td>Winding temp (continuous)</td><td class="spec-value">&le; 155&deg;C</td><td>Class F insulation limit</td></tr>
   <tr><td>Ambient temperature</td><td>&minus;10&deg;C to +45&deg;C</td><td>Agricultural environments</td></tr>
   <tr><td>Ingress protection</td><td>IP55 minimum</td><td>Dust + water jets</td></tr>
   <tr><td>Service life</td><td>&ge; 1000 hours</td><td>Before bearing replacement</td></tr>
@@ -1073,14 +1073,12 @@ li { margin-bottom: 5px; }
   <div class="table-wrap">
   <table>
     <tr><th>Propeller</th><th>Thrust (kg)</th><th>RPM</th><th>Torque (Nm)</th><th>Power (W)</th></tr>
-    <tr><td>30&times;10.5" CF</td><td>2.5</td><td>1550</td><td>0.9</td><td>150</td></tr>
-    <tr><td>30&times;10.5" CF</td><td>3.8</td><td>2000</td><td>1.7</td><td>360</td></tr>
-    <tr><td>30&times;10.5" CF</td><td>6.2</td><td>2540</td><td>2.6</td><td>690</td></tr>
-    <tr><td>30&times;10.5" CF</td><td>8.5</td><td>2930</td><td>3.5</td><td>1090</td></tr>
-    <tr><td>30&times;10.5" CF</td><td>10.8</td><td>3240</td><td>4.5</td><td>1520</td></tr>
-    <tr><td>30&times;10.5" CF</td><td>13.7</td><td>3680</td><td>5.8</td><td>2220</td></tr>
-    <tr><td>30&times;10.5" CF</td><td>16.0</td><td>3980</td><td>6.9</td><td>2870</td></tr>
-    <tr><td>30&times;10.5" CF</td><td>18.3</td><td>4210</td><td>7.9</td><td>3500</td></tr>
+    <tr><td>31&times;10" CF</td><td>3.2</td><td>1750</td><td>1.3</td><td>240</td></tr>
+    <tr><td>31&times;10" CF</td><td>5.5</td><td>2300</td><td>2.4</td><td>580</td></tr>
+    <tr><td>31&times;10" CF</td><td>9.0</td><td>2900</td><td>3.8</td><td>1150</td></tr>
+    <tr><td>31&times;10" CF</td><td>12.5</td><td>3350</td><td>5.2</td><td>1820</td></tr>
+    <tr><td>31&times;10" CF</td><td>16.0</td><td>3750</td><td>6.8</td><td>2670</td></tr>
+    <tr><td>31&times;10" CF</td><td>20.0</td><td>4150</td><td>8.7</td><td>3780</td></tr>
   </table>
   </div>
 </div>
@@ -1170,18 +1168,18 @@ L10h = (C/P)^3 &middot; 10&sup6; / (60&middot;n)       [hours, bearing life]</di
   <table>
     <tr><th>Parameter</th><th>Good</th><th>Excellent</th></tr>
     <tr><td>Configuration</td><td>36s42p or 24s28p</td><td>36s42p, Kw = 0.933</td></tr>
-    <tr><td>KV</td><td>100-140 RPM/V</td><td>110-125 RPM/V</td></tr>
-    <tr><td>Phase resistance</td><td>30-50 m&Omega;</td><td>35-42 m&Omega;</td></tr>
-    <tr><td>Weight</td><td>550-700 g</td><td>600-660 g</td></tr>
+    <tr><td>KV</td><td>100-140 RPM/V</td><td>110-130 RPM/V</td></tr>
+    <tr><td>Phase resistance</td><td>25-55 m&Omega;</td><td>30-42 m&Omega;</td></tr>
+    <tr><td>Weight</td><td>600-750 g</td><td>630-700 g</td></tr>
     <tr><td>Efficiency (hover)</td><td>&ge; 83%</td><td>&ge; 87%</td></tr>
     <tr><td>Efficiency (max)</td><td>&ge; 78%</td><td>&ge; 82%</td></tr>
-    <tr><td>Max thrust (12S)</td><td>&ge; 15 kg</td><td>&ge; 17 kg</td></tr>
+    <tr><td>Max thrust (12S)</td><td>&ge; 17 kg</td><td>&ge; 19 kg</td></tr>
     <tr><td>Cogging torque</td><td>&lt; 3% rated</td><td>&lt; 1.5% rated</td></tr>
     <tr><td>Magnet grade</td><td>N42SH or N45SH</td><td>N42SH (cost/perf optimal)</td></tr>
     <tr><td>Lamination</td><td>M19 / 35H300</td><td>0.2-0.35 mm NO grade</td></tr>
-    <tr><td>Winding temp (hover)</td><td>&lt; 140&deg;C</td><td>&lt; 120&deg;C</td></tr>
-    <tr><td>Axial height</td><td>&le; 50 mm</td><td>&le; 45 mm</td></tr>
-    <tr><td>Shaft diameter</td><td>12-16 mm</td><td>14 mm (M14 standard)</td></tr>
+    <tr><td>Winding temp (hover)</td><td>&lt; 145&deg;C</td><td>&lt; 125&deg;C</td></tr>
+    <tr><td>Axial height</td><td>&le; 55 mm</td><td>&le; 48 mm</td></tr>
+    <tr><td>Shaft diameter</td><td>12-18 mm</td><td>15 mm</td></tr>
   </table>
   </div>
 </div>
@@ -1700,18 +1698,18 @@ async function downloadPDF() {
     + '<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:16px;">'
     + '<tr><th style="background:#f3f4f6;color:#374151;font-size:10px;padding:7px 10px;text-align:left;border-bottom:1px solid #ddd;">Parameter</th><th style="background:#f3f4f6;color:#374151;font-size:10px;padding:7px 10px;text-align:left;border-bottom:1px solid #ddd;">Requirement</th><th style="background:#f3f4f6;color:#374151;font-size:10px;padding:7px 10px;text-align:left;border-bottom:1px solid #ddd;">Notes</th></tr>'
     + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Application</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">Heavy-lift multicopter (6-8 motors)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Agricultural / cargo</td></tr>'
-    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Propeller</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">29-32 inch CF, fixed-pitch</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Folding type</td></tr>'
-    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Thrust/motor (max)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2265 16 kg</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Sea level, ISA</td></tr>'
-    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Thrust/motor (hover)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">6-8 kg</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">~50% throttle</td></tr>'
-    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">DC bus voltage</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">6S-12S LiPo (22.2-50.4 V)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Nominal 12S = 44.4 V</td></tr>'
-    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Continuous current</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 40 A</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">ESC thermal limit</td></tr>'
-    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Peak current (180s)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 70 A</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">ESC peak rating</td></tr>'
-    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Motor OD</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 92 mm</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Arm clearance</td></tr>'
-    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Motor weight</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 700 g</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Including leads</td></tr>'
-    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">MTOW (vehicle)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 35 kg</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Total takeoff mass</td></tr>'
-    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Shaft diameter</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">12-16 mm</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Standard prop adapter</td></tr>'
-    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Axial height</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 50 mm</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Arm profile</td></tr>'
-    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Winding temp</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 150\u00b0C</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Class F limit</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Propeller</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">30-34 inch CF, fixed-pitch</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Folding type</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Thrust/motor (max)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2265 18 kg</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Sea level, ISA</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Thrust/motor (hover)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">7-10 kg</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">~50% throttle</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">DC bus voltage</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">6S-14S LiPo (22.2-58.8 V)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Nominal 12S = 44.4 V</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Continuous current</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 45 A</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">ESC thermal limit</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Peak current (120s)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 75 A</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">ESC peak rating</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Motor OD</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 95 mm</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Arm clearance</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Motor weight</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 750 g</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Including leads</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">MTOW (vehicle)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 40 kg</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Total takeoff mass</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Shaft diameter</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">12-18 mm</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Standard prop adapter</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Axial height</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 55 mm</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Arm profile</td></tr>'
+    + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Winding temp</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">\u2264 155\u00b0C</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Class F limit</td></tr>'
     + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Ambient temp</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">\u221210\u00b0C to +45\u00b0C</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Agricultural</td></tr>'
     + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">IP rating</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">IP55 minimum</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Dust + water jets</td></tr>'
     + '<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Service life</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">\u2265 1000 hours</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Before bearing repl.</td></tr>'
@@ -1765,14 +1763,12 @@ async function downloadPDF() {
     + '<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin-bottom:12px;">'
     + '<div style="font-size:11px;font-weight:700;color:#111;margin-bottom:6px;">Propeller Performance (for motor sizing)</div>'
     + '<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:4px;"><tr><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Propeller</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Thrust (kg)</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">RPM</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Torque (Nm)</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Power (W)</th></tr>'
-    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1550</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">0.9</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">150</td></tr>'
-    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2000</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1.7</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">360</td></tr>'
-    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">6.2</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2540</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2.6</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">690</td></tr>'
-    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">8.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2930</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1090</td></tr>'
-    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">10.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3240</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">4.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1520</td></tr>'
-    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">13.7</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3680</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">5.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2220</td></tr>'
-    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30\u00d710.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">16.0</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3980</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">6.9</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2870</td></tr>'
-    + '<tr><td style="padding:5px 10px;">30\u00d710.5" CF</td><td style="padding:5px 10px;">18.3</td><td style="padding:5px 10px;">4210</td><td style="padding:5px 10px;">7.9</td><td style="padding:5px 10px;">3500</td></tr>'
+    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">31\u00d710" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3.2</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1750</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1.3</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">240</td></tr>'
+    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">31\u00d710" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">5.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2300</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2.4</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">580</td></tr>'
+    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">31\u00d710" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">9.0</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2900</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1150</td></tr>'
+    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">31\u00d710" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">12.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3350</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">5.2</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1820</td></tr>'
+    + '<tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">31\u00d710" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">16.0</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3750</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">6.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2670</td></tr>'
+    + '<tr><td style="padding:5px 10px;">31\u00d710" CF</td><td style="padding:5px 10px;">20.0</td><td style="padding:5px 10px;">4150</td><td style="padding:5px 10px;">8.7</td><td style="padding:5px 10px;">3780</td></tr>'
     + '</table></div>'
 
     + '<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin-bottom:16px;">'
