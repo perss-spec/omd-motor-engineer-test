@@ -461,6 +461,31 @@ li { margin-bottom: 5px; }
 }
 .btn-ghost:hover { color: var(--text-secondary); border-color: var(--text-muted); }
 
+/* ─── Language switch ─── */
+.lang-switch {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.lang-btn {
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: inherit;
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.lang-btn:first-child { border-right: 1px solid var(--border); }
+.lang-btn.active { background: var(--cyan-glow); color: var(--cyan); }
+.lang-btn:hover:not(.active) { color: var(--text-secondary); }
+
 /* ─── Divider ─── */
 .divider {
   border: none;
@@ -613,7 +638,11 @@ li { margin-bottom: 5px; }
     </div>
   </div>
   <div class="header-right">
-    <span class="badge">Confidential</span>
+    <div class="lang-switch" id="lang-switch">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('uk')">UA</button>
+    </div>
+    <span class="badge" data-i18n="confidential">Confidential</span>
     <button class="btn btn-primary" id="pdf-btn" onclick="downloadPDF()">
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
       <span>Export Assignment PDF</span>
@@ -657,8 +686,8 @@ li { margin-bottom: 5px; }
 <!-- ═══════════════════ TAB 1: INTERVIEW ═══════════════════ -->
 <div id="tab-interview" class="tab-panel active">
 
-<h1>Senior Motor Design Engineer — Interview</h1>
-<p class="subtitle">
+<h1 data-i18n="int_title">Senior Motor Design Engineer — Interview</h1>
+<p class="subtitle" data-i18n="int_subtitle">
   Duration: 45-60 min
   <span class="sep"></span>
   25 questions, 5 categories
@@ -668,7 +697,7 @@ li { margin-bottom: 5px; }
 
 <button class="hint-toggle" id="hint-btn" onclick="toggleHints()">
   <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-  Show Answer Hints
+  <span data-i18n="show_hints">Show Answer Hints</span>
 </button>
 
 <!-- Category A -->
@@ -901,8 +930,8 @@ li { margin-bottom: 5px; }
 <!-- ═══════════════════ TAB 2: ASSIGNMENT ═══════════════════ -->
 <div id="tab-assignment" class="tab-panel">
 
-<h1>Design Assignment — High-Torque Outrunner Motor</h1>
-<p class="subtitle">
+<h1 data-i18n="asgn_title">Design Assignment — High-Torque Outrunner Motor</h1>
+<p class="subtitle" data-i18n="asgn_subtitle">
   Take-home assignment
   <span class="sep"></span>
   Estimated: 6-8 hours
@@ -911,15 +940,15 @@ li { margin-bottom: 5px; }
 </p>
 
 <div class="card" style="border-color: var(--cyan); border-width: 2px;">
-  <div class="card-header" style="color: var(--cyan);">
+  <div class="card-header" style="color: var(--cyan);" data-i18n="overview_title">
     <svg width="16" height="16" fill="none" stroke="var(--cyan)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
     Overview
   </div>
-  <p>OMD Systems is developing a propulsion system for a heavy-lift multirotor UAV platform. You are tasked with the electromagnetic design of the propulsion motor based on the requirements below. The goal is to maximize efficiency and thrust density while meeting all constraints.</p>
-  <p style="margin-top: 10px; color: var(--text-muted); font-size: 12px;">You may use any EM design tool: MotorCAD, ANSYS Maxwell, JMAG, FEMM, MotorAnalysis-PM, or analytical calculations + Python. FEMM is recommended if you don't have commercial licenses.</p>
+  <p data-i18n="overview_text">OMD Systems is developing a propulsion system for a heavy-lift multirotor UAV platform. You are tasked with the electromagnetic design of the propulsion motor based on the requirements below. The goal is to maximize efficiency and thrust density while meeting all constraints.</p>
+  <p style="margin-top: 10px; color: var(--text-muted); font-size: 12px;" data-i18n="overview_note">You may use any EM design tool: MotorCAD, ANSYS Maxwell, JMAG, FEMM, MotorAnalysis-PM, or analytical calculations + Python. FEMM is recommended if you don't have commercial licenses.</p>
 </div>
 
-<h2><span class="num">1</span> System Requirements</h2>
+<h2 data-i18n="sec_requirements"><span class="num">1</span> System Requirements</h2>
 
 <div class="table-wrap">
 <table>
@@ -940,9 +969,9 @@ li { margin-bottom: 5px; }
 </table>
 </div>
 
-<h2><span class="num">2</span> Design Tasks</h2>
+<h2 data-i18n="sec_tasks"><span class="num">2</span> Design Tasks</h2>
 
-<h3>Task 2.1 — Topology Selection &amp; Justification</h3>
+<h3 data-i18n="task_21">Task 2.1 — Topology Selection &amp; Justification</h3>
 <div class="card">
   <p>Select and justify with quantitative reasoning:</p>
   <ul>
@@ -954,7 +983,7 @@ li { margin-bottom: 5px; }
   <p style="margin-top: 10px;"><strong>Deliverable:</strong> 1-2 page justification with comparison table of &ge;2 candidate configurations.</p>
 </div>
 
-<h3>Task 2.2 — Electromagnetic Design</h3>
+<h3 data-i18n="task_22">Task 2.2 — Electromagnetic Design</h3>
 <div class="card">
   <p>For the selected configuration, calculate or determine through FEA:</p>
   <ul>
@@ -967,7 +996,7 @@ li { margin-bottom: 5px; }
   <p style="margin-top: 10px;"><strong>Deliverable:</strong> FEA screenshots (flux density, back-EMF, cogging plots), calculation files, parameter summary table.</p>
 </div>
 
-<h3>Task 2.3 — Material Selection</h3>
+<h3 data-i18n="task_23">Task 2.3 — Material Selection</h3>
 <div class="card">
   <div class="table-wrap">
   <table>
@@ -981,7 +1010,7 @@ li { margin-bottom: 5px; }
   <p>Include a <strong>demagnetization check</strong> at maximum current and maximum operating temperature.</p>
 </div>
 
-<h3>Task 2.4 — Thermal Assessment</h3>
+<h3 data-i18n="task_24">Task 2.4 — Thermal Assessment</h3>
 <div class="card">
   <p>Provide a thermal estimate for continuous hover operation:</p>
   <ul>
@@ -993,7 +1022,7 @@ li { margin-bottom: 5px; }
   <p style="margin-top: 10px;"><strong>Deliverable:</strong> Thermal circuit diagram, temperature estimates, cooling recommendations.</p>
 </div>
 
-<h2><span class="num">3</span> Challenge Task</h2>
+<h2 data-i18n="sec_challenge"><span class="num">3</span> Challenge Task</h2>
 
 <div class="star-block">
   <h3>&#9733; Multi-Objective Optimization (Bonus)</h3>
@@ -1017,7 +1046,7 @@ li { margin-bottom: 5px; }
   </p>
 </div>
 
-<h2><span class="num">4</span> Submission</h2>
+<h2 data-i18n="sec_submission"><span class="num">4</span> Submission</h2>
 
 <div class="card">
   <ul class="checklist">
@@ -1031,7 +1060,7 @@ li { margin-bottom: 5px; }
   </ul>
 </div>
 
-<h2><span class="num">5</span> Reference Data</h2>
+<h2 data-i18n="sec_reference"><span class="num">5</span> Reference Data</h2>
 
 <div class="card">
   <div class="card-header">Propeller Performance (for motor sizing)</div>
@@ -1061,14 +1090,14 @@ L10h = (C/P)^3 &middot; 10&sup6; / (60&middot;n)       [hours, bearing life]</di
 <div class="card" style="border-color: rgba(245, 158, 11, 0.4);">
   <div class="card-header" style="color: var(--warning);">
     <svg width="16" height="16" fill="none" stroke="var(--warning)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01M5.07 19h13.86c1.54 0 2.5-1.67 1.73-2.99L13.73 4.01c-.77-1.33-2.69-1.33-3.46 0L3.34 16.01C2.57 17.33 3.53 19 5.07 19z"/></svg>
-    Important Notes
+    <span data-i18n="notes_title">Important Notes</span>
   </div>
   <ul>
-    <li>No single "correct" answer &mdash; we evaluate engineering reasoning, not just results</li>
-    <li>State assumptions clearly. Document every design choice with brief justification</li>
-    <li>If data is missing, make reasonable engineering estimates and note them</li>
-    <li>Quality of analysis &gt; quantity of pages</li>
-    <li>Challenge task (Section 3) is optional but strongly differentiates candidates</li>
+    <li data-i18n="note_1">No single "correct" answer &mdash; we evaluate engineering reasoning, not just results</li>
+    <li data-i18n="note_2">State assumptions clearly. Document every design choice with brief justification</li>
+    <li data-i18n="note_3">If data is missing, make reasonable engineering estimates and note them</li>
+    <li data-i18n="note_4">Quality of analysis &gt; quantity of pages</li>
+    <li data-i18n="note_5">Challenge task (Section 3) is optional but strongly differentiates candidates</li>
   </ul>
 </div>
 
@@ -1077,8 +1106,8 @@ L10h = (C/P)^3 &middot; 10&sup6; / (60&middot;n)       [hours, bearing life]</di
 <!-- ═══════════════════ TAB 3: SCORING ═══════════════════ -->
 <div id="tab-scoring" class="tab-panel">
 
-<h1>Scoring Rubric</h1>
-<p class="subtitle">
+<h1 data-i18n="score_title">Scoring Rubric</h1>
+<p class="subtitle" data-i18n="score_subtitle">
   Internal use only
   <span class="sep"></span>
   Do not share with candidates
@@ -1188,6 +1217,281 @@ L10h = (C/P)^3 &middot; 10&sup6; / (60&middot;n)       [hours, bearing life]</di
 <script>
 const SCORING_CODE = 'omd2026';
 let scoringUnlocked = false;
+let currentLang = 'en';
+
+/* ═══ i18n translations ═══ */
+const i18n = {
+  uk: {
+    // Header & navigation
+    confidential: 'Конфіденційно',
+    // Tabs
+    tab_interview: 'Співбесіда',
+    tab_assignment: 'Тестове завдання',
+    tab_scoring: 'Оцінювання',
+    // Interview page
+    int_title: 'Старший інженер з проєктування двигунів — Співбесіда',
+    int_subtitle: 'Тривалість: 45-60 хв <span class="sep"></span> 25 питань, 5 категорій <span class="sep"></span> Рівень: 5+ років досвіду BLDC/PMSM',
+    show_hints: 'Показати підказки',
+    hide_hints: 'Сховати підказки',
+    // Interview categories
+    cat_a: 'Електромагнітні основи',
+    cat_b: 'Матеріали та компоненти',
+    cat_c: 'Процес проєктування та методологія',
+    cat_d: 'Термічні та механічні аспекти',
+    cat_e: 'Практичний досвід',
+    // Questions
+    q1: 'Поясніть різницю між SPM (Surface Permanent Magnet) та IPM (Interior PM) топологіями. Коли б ви обрали одну замість іншої для тягового двигуна БПЛА?',
+    q2: 'Виведіть залежність між KV (об/хв/В) та Kt (Нм/А). Чому Ke = Kt у системі СІ для синусоїдальної PMSM?',
+    q3: 'Для двигуна 36 пазів / 42 полюси з зосередженою обмоткою: розрахуйте обмотковий коефіцієнт. Чому ця конфігурація популярна для аутраннер-двигунів дронів?',
+    q4: 'Як когінг-момент залежить від НСК (найменше спільне кратне) пазів і полюсів? Назвіть 3 методи його зменшення без зміни конфігурації пазів/полюсів.',
+    q5: 'Поясніть зону послаблення поля. Що визначає максимальну швидкість? Що таке "характеристичний струм" і чому він важливий?',
+    q6: 'Порівняйте марки магнітів N42SH, N45UH та N52. Яку б ви обрали для сільськогосподарського дрона при температурі оточення 40°C та температурі обмотки 130°C? Обґрунтуйте.',
+    q7: 'Двигун з 21 парою полюсів на 4000 об/хв має електричну частоту ~1400 Гц. Як це впливає на вибір матеріалу та товщини ламінацій?',
+    q8: 'Коли зосереджена обмотка краща за розподілену? Які компроміси щодо гармонік, когінгу та втрат у міді?',
+    q9: 'Які фактори визначають оптимальну довжину повітряного зазору в аутраннер-двигуні? Що станеться, якщо він занадто малий або великий?',
+    q10: 'Опишіть процес оцінки ризику розмагнічування. Як забезпечити, щоб робоча точка залишалась вище "коліна" кривої BH при максимальному струмі та температурі?',
+    q11: 'Спроєктуйте аутраннер-двигун 3 кВт для важкого мультикоптера. Опишіть весь процес від вимог до першого прототипу.',
+    q12: 'Як ви моделюєте втрати в сталі? Поясніть різницю між моделями Стейнмеця та Бертотті (трикомпонентна).',
+    q13: 'Поясніть компроміси співвідношення L/D. Коли краще "млинець" vs подовжена геометрія?',
+    q14: 'Як би ви організували багатокритеріальну оптимізацію аутраннер-двигуна? Змінні, цілі, обмеження, алгоритм?',
+    q15: 'Ваша 2D FEA прогнозує ЕРС, але прототип показує на 12% менше. Які можливі причини?',
+    q16: 'Які домінуючі механізми охолодження аутраннер-двигуна дрона при зависанні? LPTN чи CFD — коли що використовувати?',
+    q17: 'Обмотка досягає 155°C замість цільових 130°C при безперервній роботі. OD зафіксовано. Які 3 зміни ви б пріоритизували?',
+    q18: 'Критерії вибору підшипників для аутраннер-двигуна дрона. Як розрахувати L10h?',
+    q19: 'Утримання магнітів в аутраннер-двигуні: порівняйте бандажування (кевлар/CF) з клеєм на високих обертах.',
+    q20: 'Як досягти IP55 в аутраннер BLDC без значного збільшення маси чи погіршення теплового режиму?',
+    q21: 'Опишіть проєкт двигуна зі значними компромісами. Які конкуруючі вимоги та як ви вирішили?',
+    q22: 'Як ви валідуєте FEA з прототипом? Які тести, які допуски прийнятні?',
+    q23: 'Надмірна вібрація в партії 50 двигунів, що пройшли стендові випробування. Ваш діагностичний підхід?',
+    q24: 'Замовник хоче зменшити когінг-момент в 3 рази без зміни габаритів чи марки магнітів. Варіанти?',
+    q25: 'Які FEA/design інструменти ви використовували? Порівняйте два, з якими маєте найбільший досвід.',
+    // Hints (same keys with _hint suffix)
+    h1: 'Шукаємо: реактивний момент в IPM, коефіцієнт салієнтності Ld/Lq, здатність до послаблення поля, складність виробництва. SPM переважний для аутраннер дронів.',
+    h2: 'Kt = 60/(2π·KV) ≈ 9.55/KV для фази, або ≈ 8.27/KV лінія-лінія. Збереження енергії: P = T·ω = E·I, тому Kt = Ke.',
+    h3: 'Kw = 0.933 (q = 2/7). Високий НСК = 252 зменшує когінг. Симетрія = 6 зменшує радіальні сили. Короткі лобові частини.',
+    h4: 'Вищий НСК = менша амплітуда. Методи: формування дуги магніту, скос (1 пазовий крок), оптимізація розкриття паза, хибні пази, фаски на магнітах.',
+    h5: 'I_char = λ_m / Ld. Коли I_char = I_rated → нескінченний CPSR. SPM має обмежений діапазон послаблення через низький Ld.',
+    h6: 'N42SH: Br = 1.30T, Tmax = 150°C, хороший запас. N52: Br = 1.45T але Tmax = 80°C — розмагнітиться. N42SH — оптимальний вибір.',
+    h7: 'При f > 400 Гц домінують втрати на вихрові струми. P_eddy ~ f²·t². Потрібні ламінації 0.2-0.35 мм. M19 мінімум. B20AV1200 переважно.',
+    h8: 'Зосереджена: короткі лобові частини (менші втрати Cu, легша). Недоліки: вищі просторові гармоніки → більші втрати у магнітах.',
+    h9: 'Фактори: механічний зазор, бандаж магнітів, виробничі допуски. Занадто малий: ризик складання, вищий когінг. Занадто великий: менше B_gap, менша густина моменту.',
+    h10: 'FEA при найгіршому випадку: макс d-осьовий струм + макс температура. H_load < 0.7·Hcj. Температурні коефіцієнти Br (−0.12%/°C) та Hcj (−0.6%/°C).',
+    h11: 'Кроки: sizing (D²L з TRV), вибір пазів/полюсів, магнітне коло, обмотка, FEA, термоперевірка, механіка (дзвін, вал, підшипники), прототип, випробування.',
+    h12: 'Стейнмец: P = k·f^a·B^b (емпіричний). Бертотті: P = k_h·f·B² + k_e·f²·B² + k_a·f^1.5·B^1.5 (гістерезис + вихрові + аномальні). Бертотті кращий для широкого діапазону.',
+    h13: 'Млинець: вищий момент (T ~ D²·L), менша інерція, підходить для рам БПЛА. Подовжений: краще охолодження, менша частка лобових. Дрони: L/D = 0.2-0.5.',
+    h14: 'Змінні: ширина зубця, розкриття паза, товщина/дуга магніту, витки. Цілі: ККД, маса, когінг. Обмеження: Tmax, розмагнічування, fill factor. Алгоритми: NSGA-II, Bayesian.',
+    h15: 'Причини: допуск Br магніту (−5%), температурна деградація, 3D ефекти кінців (2D завищує на 5-10%), коефіцієнт укладки, зазор більше номінального, помилки складання.',
+    h16: 'Примусова конвекція від пропелера (h = 20-50 Вт/м²К). Теплопровідність через зубці статора. LPTN для раннього проєктування, CFD для детального. Випромінювання нехтуємо.',
+    h17: '1) Збільшити fill factor (VPI заливка). 2) Краща сталь (менші втрати). 3) Оптимізація обмотки (менше витків + вища напруга = менше I²R). 4) Вентиляційні отвори.',
+    h18: 'L10h = (C/P)^3 · 10⁶/(60·n). Фактори: радіальне/осьове навантаження, оберти, преднатяг, ущільнення (2RS для IP55), клас ABEC. Ціль: >1000 год.',
+    h19: 'Відцентрова сила F = m·ω²·r. Клей сам не тримає на високих обертах/температурі. Кевлар додає запас. Карбон: міцніший але викликає вихрові втрати в магнітах.',
+    h20: 'Лабіринтне ущільнення вал/дзвін, заливка обмоток епоксидом, герметичні підшипники (2RS), перекриття юбкою дзвону, вентотвори з перегородками. Компроміс: герметичніше = гарячіше.',
+    h21: 'Відкрите питання. Шукаємо: структурований процес прийняття рішень, кількісний аналіз компромісів, узгодження зі стейкхолдерами, валідація прототипом.',
+    h22: 'ЕРС vs оберти (<5%), заблокований момент, R/L (LCR), термопрогін (термопари), когінг (датчик моменту), ефективність на стенді. Прийнятно: <5% момент, <3% ЕРС.',
+    h23: 'Дисбаланс ротора (найчастіше), дефект підшипника, ексцентриситет, відшарування магніту, резонанс на робочих обертах. Діагностика: FFT вібрацій, порівняння спектру.',
+    h24: 'Формування дуги магніту (~−50% когінгу, ~−1% моменту), скос статора на 1 крок (~−90% когінгу, −3% Kw), оптимізація розкриття паза (~−30%, без втрати моменту).',
+    h25: 'MotorCAD: швидкий мультифізичний, шаблонний. Maxwell: детальний 2D/3D FEA. JMAG: повний цикл оптимізації. FEMM: безкоштовний, для швидкої валідації.',
+    // Interview eval
+    eval_guide: 'Керівництво з оцінки',
+    eval_p1: '<strong>Q1-10</strong> — Фундаментальні знання (обов\'язкові для senior)',
+    eval_p2: '<strong>Q11-15</strong> — Методологія (відрізняє mid від senior)',
+    eval_p3: '<strong>Q16-20</strong> — Термічні/механічні (міждисциплінарні)',
+    eval_p4: '<strong>Q21-25</strong> — Практичний досвід (відрізняє теорію від реального досвіду)',
+    // Assignment page
+    asgn_title: 'Проєктне завдання — Високомоментний аутраннер-двигун',
+    asgn_subtitle: 'Домашнє завдання <span class="sep"></span> Орієнтовно: 6-8 годин <span class="sep"></span> Дедлайн: 5 робочих днів',
+    overview_title: '<svg width="16" height="16" fill="none" stroke="var(--cyan)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> Огляд',
+    overview_text: 'OMD Systems розробляє силову установку для важкого мультироторного БПЛА. Вам потрібно виконати електромагнітне проєктування тягового двигуна відповідно до наведених вимог. Мета — максимізувати ефективність та густину тяги при дотриманні всіх обмежень.',
+    overview_note: 'Можете використовувати будь-який EM-інструмент: MotorCAD, ANSYS Maxwell, JMAG, FEMM, MotorAnalysis-PM або аналітичні розрахунки + Python.',
+    // Section headers (with num prefix preserved in setLang)
+    sec_requirements: 'Системні вимоги',
+    sec_tasks: 'Проєктні задачі',
+    sec_challenge: 'Бонусне завдання',
+    sec_submission: 'Вимоги до подання',
+    sec_reference: 'Довідкові дані',
+    // Tasks
+    task_21: 'Задача 2.1 — Вибір топології та обґрунтування',
+    task_22: 'Задача 2.2 — Електромагнітне проєктування',
+    task_23: 'Задача 2.3 — Вибір матеріалів',
+    task_24: 'Задача 2.4 — Тепловий аналіз',
+    // Important notes
+    notes_title: 'Важливі примітки',
+    note_1: 'Немає єдиної "правильної" відповіді — ми оцінюємо інженерне мислення',
+    note_2: 'Чітко вказуйте допущення та обґрунтовуйте кожне проєктне рішення',
+    note_3: 'Якщо даних бракує, зробіть обґрунтовані інженерні оцінки та зазначте їх',
+    note_4: 'Якість аналізу > кількість сторінок',
+    note_5: 'Бонусне завдання (Розділ 3) необов\'язкове, але суттєво виділяє кандидатів',
+    // Scoring
+    score_title: 'Критерії оцінювання',
+    score_subtitle: 'Тільки для внутрішнього використання <span class="sep"></span> Не показувати кандидатам',
+    // Modal
+    modal_title: 'Доступ до критеріїв оцінки',
+    modal_text: 'Цей розділ лише для внутрішнього використання. Введіть код доступу.',
+    modal_cancel: 'Скасувати',
+    modal_unlock: 'Розблокувати',
+    modal_error: 'Невірний код. Спробуйте ще.',
+    // Footer
+    footer: '&copy; 2026 OMD Systems &nbsp;&mdash;&nbsp; <a href="https://omdsystems.com" target="_blank" rel="noopener">omdsystems.com</a> &nbsp;&mdash;&nbsp; Всі права захищено. Документ конфіденційний.',
+  }
+};
+
+// Store original EN content
+const enContent = {};
+
+function setLang(lang) {
+  currentLang = lang;
+  // Update toggle buttons
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+
+  if (lang === 'en') {
+    // Restore all data-i18n elements
+    for (const [key, val] of Object.entries(enContent)) {
+      if (key.startsWith('_')) continue; // skip internal keys
+      const el = document.querySelector(`[data-i18n="${key}"]`);
+      if (el) el.innerHTML = val;
+    }
+    // Restore tab labels
+    const tabs = document.querySelectorAll('.tab');
+    tabs[0].lastChild.textContent = '\n    Interview\n  ';
+    tabs[1].lastChild.textContent = '\n    Assignment\n  ';
+    tabs[2].lastChild.textContent = '\n    Scoring\n  ';
+    // Restore questions & categories
+    restoreQuestions();
+    // Restore modal
+    document.querySelector('.modal h3').textContent = 'Scoring Rubric Access';
+    document.querySelector('.modal p').textContent = 'This section is for internal use only. Enter the access code.';
+    document.getElementById('modal-password').placeholder = 'Access code';
+    document.getElementById('modal-error').textContent = 'Incorrect code. Try again.';
+    document.querySelector('.modal .btn-ghost').textContent = 'Cancel';
+    const modalUnlockEN = document.querySelector('.modal-actions .btn-primary');
+    if (modalUnlockEN) modalUnlockEN.textContent = 'Unlock';
+    document.querySelector('.footer').innerHTML = '&copy; 2026 OMD Systems &nbsp;&mdash;&nbsp; <a href="https://omdsystems.com" target="_blank" rel="noopener">omdsystems.com</a> &nbsp;&mdash;&nbsp; All rights reserved. This document is confidential.';
+    // Update hint button text
+    const hintBtn = document.getElementById('hint-btn');
+    if (hintBtn) {
+      const isActive = hintBtn.classList.contains('active');
+      const svg = hintBtn.querySelector('svg').outerHTML;
+      hintBtn.innerHTML = svg + (isActive ? ' Hide Answer Hints' : ' Show Answer Hints');
+    }
+    return;
+  }
+
+  const t = i18n[lang];
+  if (!t) return;
+
+  // Translate data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (!enContent[key]) enContent[key] = el.innerHTML;
+    if (t[key]) el.innerHTML = t[key];
+  });
+
+  // Tab labels
+  const tabs = document.querySelectorAll('.tab');
+  if (t.tab_interview) tabs[0].lastChild.textContent = '\n    ' + t.tab_interview + '\n  ';
+  if (t.tab_assignment) tabs[1].lastChild.textContent = '\n    ' + t.tab_assignment + '\n  ';
+  if (t.tab_scoring) tabs[2].lastChild.textContent = '\n    ' + t.tab_scoring + '\n  ';
+
+  // Category headers
+  const catHeaders = document.querySelectorAll('#tab-interview h2');
+  const catKeys = ['cat_a','cat_b','cat_c','cat_d','cat_e'];
+  catHeaders.forEach((h, i) => {
+    if (catKeys[i] && t[catKeys[i]]) {
+      const num = h.querySelector('.num');
+      h.innerHTML = '';
+      h.appendChild(num);
+      h.appendChild(document.createTextNode(' ' + t[catKeys[i]]));
+    }
+  });
+
+  // Questions and hints
+  const qBlocks = document.querySelectorAll('#tab-interview .q-block');
+  qBlocks.forEach((block, i) => {
+    const qKey = 'q' + (i + 1);
+    const hKey = 'h' + (i + 1);
+    const qText = block.querySelector('.q-text');
+    const hint = block.querySelector('.q-hint');
+    if (qText && t[qKey]) {
+      if (!enContent['_q' + (i+1)]) enContent['_q' + (i+1)] = qText.innerHTML;
+      qText.innerHTML = t[qKey];
+    }
+    if (hint && t[hKey]) {
+      if (!enContent['_h' + (i+1)]) enContent['_h' + (i+1)] = hint.innerHTML;
+      hint.innerHTML = t[hKey];
+    }
+  });
+
+  // Eval card
+  const evalCard = document.querySelector('#tab-interview .card:last-child');
+  if (evalCard) {
+    const header = evalCard.querySelector('.card-header');
+    const ps = evalCard.querySelectorAll('p');
+    if (header && t.eval_guide) { if (!enContent._eval_hdr) enContent._eval_hdr = header.innerHTML; header.innerHTML = t.eval_guide; }
+    if (ps[0] && t.eval_p1) { if (!enContent._eval_p1) enContent._eval_p1 = ps[0].innerHTML; ps[0].innerHTML = t.eval_p1; }
+    if (ps[1] && t.eval_p2) { if (!enContent._eval_p2) enContent._eval_p2 = ps[1].innerHTML; ps[1].innerHTML = t.eval_p2; }
+    if (ps[2] && t.eval_p3) { if (!enContent._eval_p3) enContent._eval_p3 = ps[2].innerHTML; ps[2].innerHTML = t.eval_p3; }
+    if (ps[3] && t.eval_p4) { if (!enContent._eval_p4) enContent._eval_p4 = ps[3].innerHTML; ps[3].innerHTML = t.eval_p4; }
+  }
+
+  // Assignment section headers (h2 with .num child + h3)
+  document.querySelectorAll('#tab-assignment [data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (!enContent[key]) enContent[key] = el.innerHTML;
+    if (!t[key]) return;
+    const num = el.querySelector('.num');
+    if (num) {
+      el.innerHTML = '';
+      el.appendChild(num);
+      el.appendChild(document.createTextNode(' ' + t[key]));
+    } else {
+      el.innerHTML = t[key];
+    }
+  });
+
+  // Modal
+  document.querySelector('.modal h3').textContent = t.modal_title || 'Scoring Rubric Access';
+  document.querySelector('.modal p').textContent = t.modal_text || '';
+  document.getElementById('modal-password').placeholder = lang === 'uk' ? 'Код доступу' : 'Access code';
+  document.getElementById('modal-error').textContent = t.modal_error || '';
+  document.querySelector('.modal .btn-ghost').textContent = t.modal_cancel || 'Cancel';
+  const modalUnlock = document.querySelector('.modal-actions .btn-primary');
+  if (modalUnlock) modalUnlock.textContent = t.modal_unlock || 'Unlock';
+
+  // Footer
+  if (t.footer) document.querySelector('.footer').innerHTML = t.footer;
+}
+
+function restoreQuestions() {
+  const qBlocks = document.querySelectorAll('#tab-interview .q-block');
+  qBlocks.forEach((block, i) => {
+    const qText = block.querySelector('.q-text');
+    const hint = block.querySelector('.q-hint');
+    if (qText && enContent['_q' + (i+1)]) qText.innerHTML = enContent['_q' + (i+1)];
+    if (hint && enContent['_h' + (i+1)]) hint.innerHTML = enContent['_h' + (i+1)];
+  });
+  const evalCard = document.querySelector('#tab-interview .card:last-child');
+  if (evalCard) {
+    const header = evalCard.querySelector('.card-header');
+    const ps = evalCard.querySelectorAll('p');
+    if (header && enContent._eval_hdr) header.innerHTML = enContent._eval_hdr;
+    if (ps[0] && enContent._eval_p1) ps[0].innerHTML = enContent._eval_p1;
+    if (ps[1] && enContent._eval_p2) ps[1].innerHTML = enContent._eval_p2;
+    if (ps[2] && enContent._eval_p3) ps[2].innerHTML = enContent._eval_p3;
+    if (ps[3] && enContent._eval_p4) ps[3].innerHTML = enContent._eval_p4;
+  }
+  // Restore category headers
+  const catHeaders = document.querySelectorAll('#tab-interview h2');
+  const catEN = ['Electromagnetic Fundamentals','Materials & Component Selection','Design Process & Methodology','Thermal & Mechanical','Practical Experience'];
+  catHeaders.forEach((h, i) => {
+    if (catEN[i]) {
+      const num = h.querySelector('.num');
+      h.innerHTML = '';
+      h.appendChild(num);
+      h.appendChild(document.createTextNode(' ' + catEN[i]));
+    }
+  });
+}
 
 function switchTab(tabName) {
   if (tabName === 'scoring' && !scoringUnlocked) {
@@ -1241,9 +1545,11 @@ function toggleHints() {
   const hints = document.querySelectorAll('#tab-interview .q-hint');
   const show = !btn.classList.contains('active');
   btn.classList.toggle('active');
+  const hideLabel = currentLang === 'uk' ? 'Сховати підказки' : 'Hide Answer Hints';
+  const showLabel = currentLang === 'uk' ? 'Показати підказки' : 'Show Answer Hints';
   btn.innerHTML = show
-    ? '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M3 3l18 18"/></svg> Hide Answer Hints'
-    : '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Show Answer Hints';
+    ? '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M3 3l18 18"/></svg> ' + hideLabel
+    : '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> ' + showLabel;
   hints.forEach(h => h.classList.toggle('visible', show));
 }
 
@@ -1254,50 +1560,189 @@ async function downloadPDF() {
   btn.disabled = true;
 
   const style = document.createElement('style');
-  style.textContent = '@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}';
+  style.textContent = '@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}} .pdf-render-container{position:fixed!important;top:0!important;left:0!important;z-index:-1!important;opacity:1!important;pointer-events:none!important;}';
   document.head.appendChild(style);
 
+  // Build a self-contained print-friendly div (not a clone of dark-themed panel)
+  const container = document.createElement('div');
+  container.className = 'pdf-render-container';
+  container.style.cssText = 'width:720px;background:#fff;padding:28px 32px;font-family:Inter,Arial,Helvetica,sans-serif;color:#1a1a1a;line-height:1.55;';
+
+  // Get source HTML from the assignment panel
   const panel = document.getElementById('tab-assignment');
-  const wasHidden = !panel.classList.contains('active');
-  if (wasHidden) panel.style.display = 'block';
 
-  const clone = panel.cloneNode(true);
-  clone.style.cssText = 'display:block;color:#1a1a1a;background:#fff;padding:24px;font-family:Inter,Arial,sans-serif;max-width:720px;';
+  container.innerHTML = `
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;padding-bottom:14px;border-bottom:2.5px solid #0097A7;">
+      <svg viewBox="0 0 42 42" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 2L38.3 11.5V30.5L21 40L3.7 30.5V11.5L21 2Z" stroke="#0097A7" stroke-width="2.5" fill="none"/>
+        <text x="21" y="25" text-anchor="middle" fill="#0097A7" font-family="Arial,sans-serif" font-weight="800" font-size="11" letter-spacing="1.5">OMD</text>
+      </svg>
+      <div>
+        <div style="font-size:15px;font-weight:700;letter-spacing:2.5px;color:#0097A7;">OMD SYSTEMS</div>
+        <div style="font-size:9px;color:#888;letter-spacing:1px;margin-top:1px;">SENIOR MOTOR DESIGN ENGINEER &mdash; TECHNICAL ASSESSMENT</div>
+      </div>
+      <div style="margin-left:auto;font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:1px;">Confidential</div>
+    </div>
 
-  // PDF header
-  const hdr = document.createElement('div');
-  hdr.innerHTML = '<div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:2px solid #0097A7;"><svg viewBox="0 0 42 42" width="32" height="32" fill="none"><path d="M21 2L38.3 11.5V30.5L21 40L3.7 30.5V11.5L21 2Z" stroke="#0097A7" stroke-width="2" fill="none"/><text x="21" y="25" text-anchor="middle" fill="#0097A7" font-family="Arial" font-weight="800" font-size="11" letter-spacing="1.5">OMD</text></svg><div><div style="font-size:15px;font-weight:700;letter-spacing:2px;color:#0097A7;">OMD SYSTEMS</div><div style="font-size:9px;color:#999;letter-spacing:1px;">SENIOR MOTOR DESIGN ENGINEER — TECHNICAL ASSESSMENT</div></div><div style="margin-left:auto;font-size:9px;color:#bbb;">CONFIDENTIAL</div></div>';
-  clone.insertBefore(hdr, clone.firstChild);
+    <h1 style="font-size:20px;font-weight:700;color:#111;margin:0 0 4px;">Design Assignment &mdash; High-Torque Outrunner Motor</h1>
+    <p style="font-size:11px;color:#888;margin-bottom:20px;">Take-home assignment &nbsp;&bull;&nbsp; Estimated: 6-8 hours &nbsp;&bull;&nbsp; Deadline: 5 business days</p>
 
-  // Style overrides
-  clone.querySelectorAll('.card').forEach(c => { c.style.cssText = 'background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:16px;margin-bottom:12px;'; });
-  clone.querySelectorAll('h1').forEach(e => { e.style.cssText = 'color:#111;font-size:20px;margin-bottom:4px;'; });
-  clone.querySelectorAll('h2').forEach(e => { e.style.cssText = 'color:#0097A7;font-size:15px;margin:20px 0 10px;display:flex;align-items:center;gap:8px;'; });
-  clone.querySelectorAll('h3').forEach(e => { e.style.cssText = 'color:#333;font-size:13px;margin:14px 0 8px;'; });
-  clone.querySelectorAll('p,li,td').forEach(e => { e.style.color = '#374151'; e.style.fontSize = '11px'; });
-  clone.querySelectorAll('th').forEach(e => { e.style.cssText = 'background:#f3f4f6;color:#374151;font-size:10px;padding:7px 10px;border-bottom:1px solid #e5e7eb;'; });
-  clone.querySelectorAll('td').forEach(e => { e.style.padding = '7px 10px'; e.style.borderBottom = '1px solid #f0f0f0'; });
-  clone.querySelectorAll('.spec-value').forEach(e => { e.style.color = '#0097A7'; e.style.fontWeight = '600'; });
-  clone.querySelectorAll('.formula').forEach(e => { e.style.cssText = 'background:#f3f4f6;border:1px solid #e5e7eb;color:#0097A7;font-size:10px;padding:10px 14px;border-radius:6px;margin:8px 0 12px;'; });
-  clone.querySelectorAll('.star-block').forEach(e => { e.style.cssText = 'background:#fffbeb;border:1px solid #fbbf24;border-radius:8px;padding:16px;margin:12px 0;'; });
-  clone.querySelectorAll('.star-block h3').forEach(e => { e.style.color = '#d97706'; });
-  clone.querySelectorAll('.num').forEach(e => { e.style.cssText = 'background:#e0f7fa;color:#0097A7;width:22px;height:22px;font-size:11px;display:inline-flex;align-items:center;justify-content:center;border-radius:5px;'; });
-  clone.querySelectorAll('.table-wrap').forEach(e => { e.style.cssText = 'border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin:8px 0 14px;'; });
-  clone.querySelectorAll('table').forEach(e => { e.style.minWidth = '0'; });
-  clone.querySelectorAll('.checklist li').forEach(e => { e.style.color = '#374151'; });
-  clone.querySelectorAll('.subtitle').forEach(e => { e.style.color = '#6b7280'; e.style.fontSize = '11px'; });
-  clone.querySelectorAll('.card-header').forEach(e => { e.style.color = '#111'; e.style.fontSize = '12px'; });
+    <div style="background:#f0fafa;border:2px solid #0097A7;border-radius:8px;padding:16px;margin-bottom:16px;">
+      <div style="font-size:12px;font-weight:700;color:#0097A7;margin-bottom:8px;">Overview</div>
+      <p style="font-size:11px;color:#374151;margin:0 0 8px;">OMD Systems is developing a propulsion system for a heavy-lift multirotor UAV platform. You are tasked with the electromagnetic design of the propulsion motor based on the requirements below. The goal is to maximize efficiency and thrust density while meeting all constraints.</p>
+      <p style="font-size:10px;color:#888;margin:0;">You may use any EM design tool: MotorCAD, ANSYS Maxwell, JMAG, FEMM, MotorAnalysis-PM, or analytical calculations + Python.</p>
+    </div>
 
-  clone.style.position = 'absolute';
-  clone.style.left = '-9999px';
-  document.body.appendChild(clone);
+    <h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">1. System Requirements</h2>
+    <table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:16px;">
+      <tr><th style="background:#f3f4f6;color:#374151;font-size:10px;padding:7px 10px;text-align:left;border-bottom:1px solid #ddd;">Parameter</th><th style="background:#f3f4f6;color:#374151;font-size:10px;padding:7px 10px;text-align:left;border-bottom:1px solid #ddd;">Requirement</th><th style="background:#f3f4f6;color:#374151;font-size:10px;padding:7px 10px;text-align:left;border-bottom:1px solid #ddd;">Notes</th></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Application</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">Heavy-lift multicopter (6-8 motors)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Agricultural / cargo</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Propeller</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">29-32 inch CF, fixed-pitch</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Folding type</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Thrust/motor (max)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">&ge; 16 kg</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Sea level, ISA</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Thrust/motor (hover)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">6-8 kg</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">~50% throttle</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">DC bus voltage</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">6S-12S LiPo (22.2-50.4 V)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Nominal 12S = 44.4 V</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Continuous current</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">&le; 40 A</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">ESC thermal limit</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Peak current (180s)</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">&le; 70 A</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">ESC peak rating</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Motor OD</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">&le; 92 mm</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Arm clearance</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Motor weight</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#0097A7;font-weight:600;">&le; 700 g</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Including leads</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Ambient temp</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">&minus;10&deg;C to +45&deg;C</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Agricultural</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">IP rating</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">IP55 minimum</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Dust + water jets</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Service life</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;">&ge; 1000 hours</td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#666;">Before bearing repl.</td></tr>
+      <tr><td style="padding:6px 10px;font-weight:500;">Vibration</td><td style="padding:6px 10px;">Grade A (ISO 10816)</td><td style="padding:6px 10px;color:#666;">Smooth operation</td></tr>
+    </table>
+
+    <h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">2. Design Tasks</h2>
+
+    <h3 style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px;">Task 2.1 &mdash; Topology Selection &amp; Justification</h3>
+    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:12px;">
+      <p style="font-size:11px;color:#374151;margin:0 0 6px;">Select and justify with quantitative reasoning:</p>
+      <ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;">
+        <li>Motor topology: outrunner SPM, outrunner IPM, inrunner, or axial flux</li>
+        <li>Slot/pole combination (with winding factor calculation)</li>
+        <li>Winding configuration: concentrated vs distributed, star vs delta</li>
+        <li>Target KV value (derive from thrust/propeller/voltage requirements)</li>
+      </ul>
+      <p style="font-size:10px;color:#666;margin:8px 0 0;"><strong>Deliverable:</strong> 1-2 page justification with comparison table of &ge;2 candidate configurations.</p>
+    </div>
+
+    <h3 style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px;">Task 2.2 &mdash; Electromagnetic Design</h3>
+    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:12px;">
+      <p style="font-size:11px;color:#374151;margin:0 0 6px;">Calculate or determine through FEA:</p>
+      <ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;">
+        <li><strong>Magnetic circuit:</strong> B_gap, B_tooth, B_yoke</li>
+        <li><strong>Winding:</strong> Turns/coil, wire gauge, parallel strands, fill factor, R_phase, L_d, L_q</li>
+        <li><strong>Performance:</strong> Back-EMF waveform, torque-current curve, cogging torque</li>
+        <li><strong>Losses:</strong> Copper (hover + max), iron (hysteresis + eddy), magnet eddy</li>
+        <li><strong>Efficiency:</strong> At 25%, 50%, 75%, 100% throttle</li>
+      </ul>
+      <p style="font-size:10px;color:#666;margin:8px 0 0;"><strong>Deliverable:</strong> FEA screenshots, calculation files, parameter summary table.</p>
+    </div>
+
+    <h3 style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px;">Task 2.3 &mdash; Material Selection</h3>
+    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:12px;">
+      <table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:8px;">
+        <tr><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Component</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Specify</th></tr>
+        <tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Stator lamination</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">Grade, thickness, core loss at operating frequency</td></tr>
+        <tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Permanent magnets</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">Grade, Br, Hcj, BHmax, max temperature, dimensions</td></tr>
+        <tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;font-weight:500;">Magnet wire</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">Material, gauge, insulation class, parallel strands</td></tr>
+        <tr><td style="padding:5px 10px;font-weight:500;">Rotor bell</td><td style="padding:5px 10px;">Material, wall thickness, surface treatment</td></tr>
+      </table>
+      <p style="font-size:10px;color:#666;margin:0;">Include a <strong>demagnetization check</strong> at max current and max operating temperature.</p>
+    </div>
+
+    <h3 style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px;">Task 2.4 &mdash; Thermal Assessment</h3>
+    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:12px;">
+      <ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;">
+        <li>Identify all heat sources and magnitudes</li>
+        <li>Estimate winding hot-spot temperature (LPTN or equivalent)</li>
+        <li>Confirm magnet temperature within safe limits</li>
+        <li>Suggest cooling strategy</li>
+      </ul>
+      <p style="font-size:10px;color:#666;margin:8px 0 0;"><strong>Deliverable:</strong> Thermal circuit diagram, temperature estimates, cooling recommendations.</p>
+    </div>
+
+    <h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">3. Challenge Task (Bonus)</h2>
+    <div style="background:#fffbeb;border:1px solid #fbbf24;border-radius:8px;padding:14px;margin-bottom:16px;">
+      <h3 style="font-size:12px;font-weight:700;color:#d97706;margin:0 0 8px;">&#9733; Multi-Objective Optimization</h3>
+      <p style="font-size:11px;color:#374151;margin:0 0 6px;">Define and execute optimization with objectives:</p>
+      <ol style="font-size:11px;color:#374151;margin:0 0 6px;padding-left:18px;">
+        <li><strong>Maximize</strong> efficiency at hover (50% throttle)</li>
+        <li><strong>Minimize</strong> cogging torque (% of rated)</li>
+        <li><strong>Minimize</strong> motor weight (active materials)</li>
+      </ol>
+      <p style="font-size:11px;color:#374151;margin:0 0 6px;"><strong>Variables (min 4):</strong> tooth width, slot opening, magnet thickness, magnet arc ratio, turns/wire gauge</p>
+      <p style="font-size:11px;color:#374151;margin:0 0 4px;"><strong>Output:</strong> Pareto front, sensitivity analysis, recommended design point with justification.</p>
+      <p style="font-size:10px;color:#888;margin:0;">Tools: Python+PyFEMM, MATLAB+FEA, MotorCAD optimizer, JMAG, or manual DOE.</p>
+    </div>
+
+    <h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">4. Submission</h2>
+    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:16px;">
+      <ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;">
+        <li>PDF report (10-20 pages, structured per tasks 2.1-2.4 + bonus)</li>
+        <li>Complete parameter summary table (single page)</li>
+        <li>FEA model files (.fem / .lua / project files)</li>
+        <li>Calculation scripts or spreadsheets</li>
+        <li>Back-EMF, cogging torque, and flux density plots</li>
+        <li>Efficiency data (hover + max thrust at minimum)</li>
+        <li>Active component BOM with estimated costs</li>
+      </ul>
+    </div>
+
+    <h2 style="font-size:14px;font-weight:700;color:#0097A7;margin:18px 0 10px;border-bottom:1px solid #e0e0e0;padding-bottom:6px;">5. Reference Data</h2>
+    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:12px;">
+      <div style="font-size:11px;font-weight:700;color:#111;margin-bottom:6px;">Propeller Performance (for motor sizing)</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:4px;">
+        <tr><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Propeller</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Thrust (kg)</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">RPM</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Torque (Nm)</th><th style="background:#f3f4f6;padding:6px 10px;text-align:left;font-size:10px;border-bottom:1px solid #ddd;">Power (W)</th></tr>
+        <tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30&times;10.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2000</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1.7</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">360</td></tr>
+        <tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30&times;10.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">8.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2930</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3.5</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">1090</td></tr>
+        <tr><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">30&times;10.5" CF</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">13.7</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">3680</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">5.8</td><td style="padding:5px 10px;border-bottom:1px solid #f0f0f0;">2220</td></tr>
+        <tr><td style="padding:5px 10px;">30&times;10.5" CF</td><td style="padding:5px 10px;">18.3</td><td style="padding:5px 10px;">4210</td><td style="padding:5px 10px;">7.9</td><td style="padding:5px 10px;">3500</td></tr>
+      </table>
+    </div>
+
+    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:16px;">
+      <div style="font-size:11px;font-weight:700;color:#111;margin-bottom:6px;">Useful Relationships</div>
+      <pre style="background:#f3f4f6;border:1px solid #e5e7eb;border-radius:4px;padding:10px 12px;font-family:monospace;font-size:10px;color:#0097A7;margin:0;white-space:pre;line-height:1.6;">Kt = 60 / (2&pi; &middot; KV)              [Nm/A]
+B_gap = Br &middot; Lm / (Lm + &mu;r &middot; g)    [T]
+&Phi; = B_gap &middot; &alpha;p &middot; (&pi;D / 2p) &middot; L   [Wb]
+P_iron &asymp; kh&middot;f&middot;B&sup2; + ke&middot;f&sup2;&middot;B&sup2;       [W/kg]
+L10h = (C/P)^3 &middot; 10&sup6; / (60&middot;n)       [hours]</pre>
+    </div>
+
+    <div style="background:#fff7ed;border:1px solid #f59e0b;border-radius:6px;padding:12px;margin-bottom:16px;">
+      <div style="font-size:11px;font-weight:700;color:#d97706;margin-bottom:6px;">Important Notes</div>
+      <ul style="font-size:11px;color:#374151;margin:0;padding-left:18px;">
+        <li>No single "correct" answer &mdash; we evaluate engineering reasoning</li>
+        <li>State assumptions clearly and justify every design choice</li>
+        <li>If data is missing, make reasonable estimates and note them</li>
+        <li>Quality of analysis &gt; quantity of pages</li>
+        <li>Challenge task (Section 3) is optional but strongly differentiates candidates</li>
+      </ul>
+    </div>
+
+    <div style="text-align:center;color:#ccc;font-size:9px;margin-top:24px;padding-top:12px;border-top:1px solid #eee;">
+      &copy; 2026 OMD Systems &mdash; omdsystems.com &mdash; All rights reserved. This document is confidential.
+    </div>
+  `;
+
+  document.body.appendChild(container);
+
+  // Small delay for fonts to load in the render container
+  await new Promise(r => setTimeout(r, 300));
 
   try {
     await html2pdf().set({
-      margin: [14, 14, 14, 14],
+      margin: [10, 10, 10, 10],
       filename: 'OMD-Systems-Motor-Design-Assignment.pdf',
-      image: { type: 'jpeg', quality: 0.95 },
-      html2canvas: { scale: 2, backgroundColor: '#ffffff', useCORS: true },
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: {
+        scale: 2,
+        backgroundColor: '#ffffff',
+        useCORS: true,
+        scrollX: 0,
+        scrollY: 0,
+        windowWidth: 720
+      },
       jsPDF: {
         unit: 'mm', format: 'a4', orientation: 'portrait',
         encryption: {
@@ -1305,16 +1750,16 @@ async function downloadPDF() {
           ownerPassword: 'OMD-HR-2026!SecureDoc',
           userPermissions: ['print']
         }
-      }
-    }).from(clone).save();
+      },
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+    }).from(container).save();
   } catch(e) {
     console.error('PDF error:', e);
-    alert('PDF generation failed. Use Ctrl+P to print.');
+    alert('PDF generation failed. Try Ctrl+P to print instead.');
   }
 
-  document.body.removeChild(clone);
+  document.body.removeChild(container);
   style.remove();
-  if (wasHidden) panel.style.display = '';
   btn.innerHTML = origHTML;
   btn.disabled = false;
 }
